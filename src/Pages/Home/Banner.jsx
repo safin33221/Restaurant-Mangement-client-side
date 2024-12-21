@@ -24,9 +24,10 @@ const Banner = () => {
                 centeredSlides={true}
                 loop={true}
                 autoplay={{
-                    delay: 3000,
+                    delay: 2000,
                     disableOnInteraction: false,
                 }}
+                draggable
                 pagination={{
                     clickable: true,
                 }}
@@ -34,16 +35,16 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
 
             >
-                <SwiperSlide><img src={slid1} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid2} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid3} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid4} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid5} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid6} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid7} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid8} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid9} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={slid10} alt="" /></SwiperSlide>
+                <SwiperSlide><img src={slid1} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid2} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid3} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid4} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid5} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid6} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid7} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid8} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid9} alt="Loading" /></SwiperSlide>
+                <SwiperSlide><img src={slid10} alt="loading" /></SwiperSlide>
             </Swiper>
 
         </div>

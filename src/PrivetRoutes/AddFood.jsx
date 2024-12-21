@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { authContext } from '../Provider/AuthProvider';
+import axios from 'axios';
 
 const AddFood = () => {
-    const {user} = useContext(authContext)
+    const { user } = useContext(authContext)
     const handleSubmit = e => {
         e.preventDefault()
         const data = new FormData(e.target)
@@ -10,6 +11,12 @@ const AddFood = () => {
         const formData = Object.fromEntries(data.entries())
 
         console.log(formData);
+        axios.post('http://localhost:8080/foods', formData)
+            .then(res => {
+                console.log(res.data);
+            })
+
+
     }
     return (
         <div>
