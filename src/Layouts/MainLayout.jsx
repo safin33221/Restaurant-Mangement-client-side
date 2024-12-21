@@ -1,11 +1,20 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../Components/Navbar/Navbar';
 
 const MainLayout = () => {
     return (
         <div>
-            <h1>Hello world</h1>
+            {/* Navbar section */}
+            <nav className='bg-base-300'>
+                <Navbar />
+            </nav>
+
+            {/* Main section  */}
+
             <Outlet></Outlet>
+
+            {/* Footer section  */}
         </div>
     );
 };
