@@ -57,8 +57,9 @@ const Navbar = () => {
                                 <span className="badge">New</span>
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><NavLink to='/myFoods'>My Foods</NavLink></li>
+                        <li><NavLink to='/addFood'>Add food</NavLink></li>
+                        <li><NavLink to='/myOrders'>My Orders</NavLink></li>
                     </ul>
                 </div>
             </div>

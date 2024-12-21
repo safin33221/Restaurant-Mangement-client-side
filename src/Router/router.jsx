@@ -4,23 +4,28 @@ import MainLayout from '../Layouts/MainLayout';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Home from '../Pages/Home/Home';
+import AddFood from '../PrivetRoutes/AddFood';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
-        children:[
+        children: [
             {
-                path:'/',
-                element:<Home/>
+                path: '/',
+                element: <Home />
             },
             {
-                path:'/login',
-                element:<Login/>
+                path: '/login',
+                element: <Login />
             },
             {
-                path:'/register',
-                element:<Register/>
+                path: '/register',
+                element: <Register />
+            },
+            {
+                path: '/addFood',
+                element: <AddFood />
             },
         ]
     }
