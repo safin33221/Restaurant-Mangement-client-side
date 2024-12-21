@@ -16,7 +16,15 @@ const Register = () => {
         const photo = form.photo.value
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password);
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!name || !photo || !email || !password) {
+            return toast.error('Please complete all required fields to proceed!')
+        }
+        if (!regex.test(password)) {
+            return toast.error(' Length must be at least 6 character with an Uppercase and letter')
+        }
+
+
         signUpWithEmailAndPass(email, password)
             .then(result => {
                 console.log(result);
