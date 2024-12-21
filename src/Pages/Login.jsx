@@ -59,7 +59,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div>
-                            <p>Already have an Account <Link to='/register'><span className='text-red-500 underline'>Register Now</span></Link></p>
+                            <p>New in this site <Link to='/register'><span className='text-red-500 underline'>Register Now</span></Link></p>
                         </div>
                     </form>
                 </div>
