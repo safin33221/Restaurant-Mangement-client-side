@@ -1,16 +1,25 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
-    const { user } = useContext(authContext)
+    const { user, singOutUser } = useContext(authContext)
     console.log(user);
     const links = <>
         <li ><NavLink to='/'>Home</NavLink></li>
         <li ><NavLink to='/allFoods'>All Foods</NavLink></li>
         <li ><NavLink to='/gallery'>Gallery</NavLink></li>
     </>
+    //sign out user
+
+    const handleSignOut = () => {
+        singOutUser()
+            .then(() => {
+                toast.success('Sign Out successful')
+            })
+    }
     return (
         <div className="navbar  w-11/12 mx-auto">
             <div className="flex-1">
@@ -22,7 +31,8 @@ const Navbar = () => {
 
                     {
                         user ?
-                            <button className="btn btn-xl btn-outline hover:bg-blue-400 mx-2">Logout</button>
+                            <button onClick={handleSignOut}
+                                className="btn btn-xl btn-outline hover:bg-blue-400 mx-2">Logout</button>
                             :
                             <Link to='/login'>
                                 <button className="btn btn-xl btn-outline hover:bg-blue-400 mx-2">Login</button>

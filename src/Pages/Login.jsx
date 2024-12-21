@@ -1,14 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { authContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const { signInWithEmailAndPass } = useContext(authContext)
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value
         const password = form.email.value
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPass(email, password)
+            .then(res => {
+                toast.success('Login Successful')
+                navigate('/')
+            })
     }
     return (
         <div className="hero bg-base-200 py-3">
