@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaImages } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { authContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
+    const { signUpWithEmailAndPass } = useContext(authContext)
+    const navigate = useNavigate()
+
+    const handleRegister = e => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value
+        const photo = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
+        console.log(email, password);
+        signUpWithEmailAndPass(email, password)
+            .then(result => {
+                console.log(result);
+                const user = result.user
+                updateProfile(user, { displayName: name, photoURL: photo })
+                form.reset()
+                toast.success('Register success')
+                navigate('/')
+
+            })
+    }
     return (
         <div className="hero bg-base-200 py-3">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -17,7 +42,8 @@ const Register = () => {
                 {/* login form */}
                 <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl w-1/2">
                     <h1 className="text-3xl mt-3 font-bold text-center">Register now!</h1>
-                    <form className="card-body">
+                    <form onSubmit={handleRegister}
+                        className="card-body">
                         {/* userName */}
                         <label class="input input-bordered flex items-center gap-2">
                             <svg
@@ -28,11 +54,11 @@ const Register = () => {
                                 <path
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                             </svg>
-                            <input type="text" class="grow" placeholder="Username" />
+                            <input name='name' type="text" class="grow" placeholder="Username" />
                         </label>
                         <label class="input input-bordered flex items-center gap-2">
-                            <FaImages  class="h-4 w-4 opacity-70"></FaImages>
-                            <input type="text" class="grow" placeholder="Search" />
+                            <FaImages class="h-4 w-4 opacity-70"></FaImages>
+                            <input name='photo' type="text" class="grow" placeholder="Search" />
                         </label>
                         <label class="input input-bordered flex items-center gap-2">
                             <svg
@@ -45,7 +71,7 @@ const Register = () => {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input type="text" class="grow" placeholder="Email" />
+                            <input name='email' type="text" class="grow" placeholder="Email" />
                         </label>
 
                         <label class="input input-bordered flex items-center gap-2">
@@ -59,7 +85,7 @@ const Register = () => {
                                     d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <input type="password" class="grow" placeholder="password" />
+                            <input name='password' type="password" class="grow" placeholder="password" />
                         </label>
 
 
