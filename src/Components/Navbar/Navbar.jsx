@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -15,7 +15,9 @@ const Navbar = () => {
             <div className="flex-none gap-2">
                 <div className="menu menu-horizontal px-1 flex items-center">
                     {links}
-                    <button className="btn btn-xl btn-outline hover:bg-blue-400 mx-2">Logout</button>
+                    <Link to='/login'>
+                        <button className="btn btn-xl btn-outline hover:bg-blue-400 mx-2">Logout</button>
+                    </Link>
                 </div>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
