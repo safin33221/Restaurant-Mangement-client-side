@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import styled from 'styled-components';
+import { auth } from '../Firebase/firebase.config';
+import { authContext } from '../Provider/AuthProvider';
+
+const StyledDiv = styled.div`
+    background: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.color};
+    
+`;
 
 const MainLayout = () => {
+    const {darktheme} = useContext(authContext)
+
     return (
-        <div>
-            {/* Navbar section */}
-            <nav className='bg-base-300'>
-                <Navbar />
-            </nav>
 
-            {/* Main section  */}
+        <StyledDiv>
+            <div >
+                {/* Navbar section */}
+                <nav className={darktheme || 'bg-base-200'} >
+                    <Navbar />
+                </nav>
 
-            <Outlet></Outlet>
+                {/* Main section  */}
 
-            {/* Footer section  */}
-            <Footer></Footer>
+                <Outlet></Outlet>
 
-            <ToastContainer></ToastContainer>
-        </div>
+                {/* Footer section  */}
+                <Footer></Footer>
+
+                <ToastContainer></ToastContainer>
+            </div>
+        </StyledDiv>
     );
 };
 

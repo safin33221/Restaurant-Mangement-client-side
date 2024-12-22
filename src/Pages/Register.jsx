@@ -37,7 +37,7 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero bg-base-200 py-3">
+        <div className="hero  py-3">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-1/2">
                     <h1 className="text-5xl font-bold">Register now!</h1>
@@ -48,10 +48,10 @@ const Register = () => {
                 </div>
 
                 {/* login form */}
-                <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl w-1/2">
+                <div className="card  max-w-sm shrink-0 shadow-2xl w-1/2">
                     <h1 className="text-3xl mt-3 font-bold text-center">Register now!</h1>
                     <form onSubmit={handleRegister}
-                        className="card-body">
+                        className="card-body text-black">
                         {/* userName */}
                         <label class="input input-bordered flex items-center gap-2">
                             <svg
@@ -62,7 +62,7 @@ const Register = () => {
                                 <path
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                             </svg>
-                            <input name='name' type="text" class="grow" placeholder="Username" />
+                            <input name='name' type="text" class="grow text-black" placeholder="Username" />
                         </label>
                         <label class="input input-bordered flex items-center gap-2">
                             <FaImages class="h-4 w-4 opacity-70"></FaImages>
@@ -99,17 +99,13 @@ const Register = () => {
 
 
                         <div className="form-control mt-3">
-                            <button className="btn btn-outline">Register</button>
+                            <button className="btn bg-green-400 hover:bg-green-500">Register</button>
                         </div>
-                        {/* <div className="form-control">
-                            <label class="">
-                                <button className="btn w-full btn-outline">Login With Google</button>
-                            </label>
-                        </div> */}
-                        <div>
-                            <p>Already have an Account <Link to='/login'><span className='text-red-500 underline'>Login Now</span></Link></p>
-                        </div>
+                        
                     </form>
+                    <div className='mx-8 py-3'>
+                        <p>Already have an Account <Link to='/login'><span className='text-red-500 underline'>Login Now</span></Link></p>
+                    </div>
                 </div>
             </div>
         </div>

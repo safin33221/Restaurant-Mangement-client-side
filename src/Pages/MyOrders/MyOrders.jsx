@@ -1,47 +1,17 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { authContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { authContext } from '../../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
-const MyFoods = () => {
+const MyOrders = () => {
     const { user } = useContext(authContext)
-    console.log(user?.email);
-    const [myFoods, setMyFoods] = useState([])
+    const [myFoods, setFoods] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:8080/my-foods/${user?.email}`)
+        axios.get(`http://localhost:8080/parchases-food/${user?.email}`)
             .then(res => {
-                setMyFoods(res.data)
+                setFoods(res.data);
             })
     }, [user?.email])
-
-    const handleDelete = id => {
-
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                axios.delete(`http://localhost:8080/foods/${id}`)
-                    .then(res => {
-                        console.log(res.data);
-                        const remaining = myFoods.filter(food => food._id !== id)
-                        setMyFoods(remaining)
-                    })
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
-            }
-        });
-
-    }
     return (
         <div>
             <div className='flex flex-col mt-6 w-11/12 mx-auto my-5'>
@@ -81,17 +51,17 @@ const MyFoods = () => {
                                             scope='col'
                                             className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right '
                                         >
-                                            Quentity
+                                            Buying Date
                                         </th>
                                         <th
                                             scope='col'
                                             className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right '
                                         >
-                                            Origin
+                                            Food Woner
                                         </th>
 
                                         <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right '>
-                                            Action
+                                            Delete
                                         </th>
                                     </tr>
                                 </thead>
@@ -115,7 +85,7 @@ const MyFoods = () => {
                                                     <p
                                                         className={`px-3 py-1   text-sm  rounded-full`}
                                                     >
-                                                        {food.quantity}
+                                                        {food.buying_Date}
                                                     </p>
                                                 </div>
                                             </td>
@@ -142,25 +112,7 @@ const MyFoods = () => {
                                                         </svg>
                                                     </button>
 
-                                                    <Link
-                                                        to={`/upadate-food/${food._id}`}
-                                                        className=' transition-colors duration-200   hover:text-yellow-500 focus:outline-none'
-                                                    >
-                                                        <svg
-                                                            xmlns='http://www.w3.org/2000/svg'
-                                                            fill='none'
-                                                            viewBox='0 0 24 24'
-                                                            strokeWidth='1.5'
-                                                            stroke='currentColor'
-                                                            className='w-5 h-5'
-                                                        >
-                                                            <path
-                                                                strokeLinecap='round'
-                                                                strokeLinejoin='round'
-                                                                d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10'
-                                                            />
-                                                        </svg>
-                                                    </Link>
+                                                    
                                                 </div>
                                             </td>
                                         </tr>)
@@ -172,8 +124,8 @@ const MyFoods = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
-export default MyFoods;
+export default MyOrders;

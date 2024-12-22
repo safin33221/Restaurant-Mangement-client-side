@@ -1,6 +1,8 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase.config';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from '../Theme/Theme';
 
 export const authContext = createContext()
 
@@ -8,6 +10,7 @@ export const authContext = createContext()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [darktheme, setDarkTheme] = useState(false)
     const GooglePorvider = new GoogleAuthProvider()
 
     //create user with email and password
@@ -49,11 +52,14 @@ const AuthProvider = ({ children }) => {
         signInWithEmailAndPass,
         signInWithGoogle,
         singOutUser,
+        setDarkTheme,
+        darktheme,
         user
     }
     return (
         <authContext.Provider value={authValue}>
-            {children}
+
+            <ThemeProvider theme={darktheme ? darkTheme : lightTheme}>{children}</ThemeProvider>
         </authContext.Provider>
     );
 };

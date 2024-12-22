@@ -25,7 +25,7 @@ const AllFood = () => {
             <div>
                 <h1 className='text-center font-bold text-3xl  border-b-4 border-green-500 w-fit mx-auto'>Our Food items</h1>
                 <div className="join flex items-center justify-center mt-5">
-                    <input onChange={(e) => setSearch(e.target.value)} className="input input-bordered focus:outline-none join-item ring-green-200" placeholder="Search Here" />
+                    <input onChange={(e) => setSearch(e.target.value)} className="input text-black input-bordered focus:outline-none join-item ring-green-200" placeholder="Search Here" />
                     <button className="btn join-item rounded-r-full">Search</button>
                 </div>
                 <div className='grid grid-cols-4 gap-4 w-11/12 mx-auto my-10'>

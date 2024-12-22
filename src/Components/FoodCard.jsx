@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom';
 
 const FoodCard = ({ food }) => {
     return (
-        <div className="max-w-md mx-auto focus:border-green-600 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
+        <div className="max-w-md mx-auto  border-gray-200 border focus:border-green-600 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
             <img
                 src={food.foodImage}
                 alt={food.foodName}
                 className="w-full h-48 object-cover"
             />
-            <div className="p-2">
-                <h3 className="text-lg font-bold text-gray-800">{food.foodName}</h3>
-                <p className="text-sm text-gray-600 mt-1">{food.foodCategory}</p>
+            <div className="p-4">
+                <h3 className="text-lg font-bold ">{food.foodName}</h3>
+                <p className="text-sm  mt-1">{food.foodCategory}</p>
                 {/* <p className="mt-3 text-sm text-gray-700">{food.description}</p> */}
 
-                <div className="mt-2 flex items-center justify-between text-gray-800">
+                <div className="mt-2 flex items-center justify-between ">
                     <span className="text-xl font-semibold">${food.price}</span>
-                    <span className="text-sm text-gray-500">Qty: {food.quantity}</span>
+                    <span className="text-sm ">Quantity: {food.quantity}</span>
                 </div>
 
                 <div className="mt-2">
-                    <span className="block text-sm font-medium text-gray-600">
+                    <span className="block text-sm font-medium ">
                         Origin: {food.foodOrigin}
                     </span>
                     {/* <span className="block text-sm font-medium text-gray-600">

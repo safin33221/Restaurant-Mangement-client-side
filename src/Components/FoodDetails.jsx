@@ -13,30 +13,33 @@ const FoodDetails = () => {
     }, [id])
     console.log(food);
     return (
-        <div className="w-10/12 grid md:grid-cols-2 grid-cols-1 mx-auto my-10 focus:border-green-600 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
+        <div className="w-10/12 grid md:grid-cols-2 grid-cols-1 mx-auto my-10 focus:border-green-600  rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
             <img
                 src={food.foodImage}
                 alt={food.foodName}
                 className="w-full h-80 object-cover bg-cover"
             />
             <div className="p-2 px-4">
-                <h3 className="text-2xl font-bold text-gray-800">{food.foodName}</h3>
-                <p className="text-xl text-gray-600 mt-1">{food.foodCategory}</p>
-                <p className="mt-3 text-sm text-gray-700">{food.description}</p>
+                <h3 className="text-2xl font-bold ">{food.foodName}</h3>
+                <p className="text-xl  mt-1">{food.foodCategory}</p>
+                <p className="mt-1 text-sm ">{food.description}</p>
 
-                <div className="mt-2 flex items-center gap-5 text-gray-800">
-                    <span className="text-xl font-semibold">${food.price}</span>
-                    <span className="text-xl text-gray-500">Qty: {food.quantity}</span>
+                <div className=" flex gap-2  ">
+                    
+                    <span className="text-lg ">Price: ${food.price} </span>
+                    <span className="text-gray-500 mx-2">||</span>
+                    <span className="text-lg ">Quantity: {food.quantity}</span>
                 </div>
 
-                <div className="my-2">
-                    <span className="block text-sm font-medium text-gray-800">
-                        <span className="font-bold">Origin:</span> {food.foodOrigin}
+                <div className="">
+                    <span className="block text-sm font-medium ">
+                        <span className="font-bold">Origin:</span> {food.foodOrigin} <br />
+                        <span className="font-bold">purchased:</span> {food.Purchase_count}
                     </span>
-                    <span className="block text-sm font-medium text-gray-600 my-1">
+                    <span className="block text-sm font-medium  my-1">
                         <span className="font-bold">Added By:</span><br />
-                        Name:{food.name} <br />
-                        Email: {food.email}
+                        Name: {food.name}. <br />
+                        Email:  {food.email}
                     </span>
                 </div>
                 <div>
