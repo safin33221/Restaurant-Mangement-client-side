@@ -9,6 +9,7 @@ const AddFood = () => {
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
+        formData.Purchase_count = 0;
 
         console.log(formData);
         axios.post('http://localhost:8080/foods', formData)
