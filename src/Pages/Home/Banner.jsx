@@ -19,7 +19,7 @@ const Banner = () => {
         <div className='py-12'>
             {/* <img src={slid1} alt="" /> */}
             <Swiper
-                className='w-7/12 mx-auto'
+                className='w-7/12 mx-auto relative'
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}

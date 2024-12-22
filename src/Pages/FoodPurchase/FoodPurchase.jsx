@@ -16,13 +16,13 @@ const FoodPurchase = () => {
     }, [id])
     console.log(food);
 
-    const handleSubmit = e => {
-        
+    const handleParchase = e => {
+
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className=" w-11/12 md:w-6/12 mx-auto p-3 bg-white shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
+            <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3 bg-white shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
                 <h2 className="text-2xl font-semibold text-center text-green-500">Food Purchase</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -37,7 +37,7 @@ const FoodPurchase = () => {
                         />
                     </div>
 
-                    
+
 
                     <div className="col-span-12 md:col-span-3 flex flex-col">
                         <label className="text-lg text-gray-700">Quantity</label>
@@ -65,7 +65,7 @@ const FoodPurchase = () => {
                     </div>
 
 
-                    <div className="flex flex-col col-span-12 space-y-2">
+                    <div className="flex flex-col col-span-12 md:col-span-6 space-y-2">
                         <label className="text-lg text-gray-700">Buyer Name</label>
                         <div className="flex space-x-4">
 
@@ -78,7 +78,7 @@ const FoodPurchase = () => {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col col-span-12 space-y-2">
+                    <div className="flex flex-col col-span-12 md:col-span-6 space-y-2">
                         <label className="text-lg text-gray-700">Buyer Email</label>
                         <div className="flex space-x-4">
 

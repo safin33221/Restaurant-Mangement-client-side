@@ -4,7 +4,7 @@ import { authContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { signInWithEmailAndPass } = useContext(authContext)
+    const { signInWithEmailAndPass, signInWithGoogle } = useContext(authContext)
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -16,6 +16,12 @@ const Login = () => {
             .then(res => {
                 toast.success(' Welcome back! Login successful.')
                 navigate('/')
+            })
+    }
+    const handleLoginWithGoogle = () => {
+        signInWithGoogle()
+            .then(data => {
+                console.log(data);
             })
     }
     return (
@@ -72,7 +78,7 @@ const Login = () => {
                         </div>
                         <div className="form-control">
                             <label class="">
-                                <button className="btn w-full btn-outline">Login With Google</button>
+                                <button onClick={handleLoginWithGoogle} className="btn w-full btn-outline">Login With Google</button>
                             </label>
                         </div>
                         <div>
