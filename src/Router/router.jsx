@@ -8,6 +8,7 @@ import AddFood from '../PrivetRoutes/AddFood';
 import AllFood from '../Pages/AllFood/AllFood';
 import FoodDetails from '../Components/FoodDetails';
 import FoodPurchase from '../Pages/FoodPurchase/FoodPurchase';
+import Gallery from '../Pages/Gallery/Gallery';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: '/allFoods',
                 element: <AllFood />
+            },
+            {
+                path: '/gallery',
+                element: <Gallery />
             },
             {
                 path: '/login',
