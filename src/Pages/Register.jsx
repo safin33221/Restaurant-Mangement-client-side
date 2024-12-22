@@ -18,10 +18,10 @@ const Register = () => {
         const password = form.password.value
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!name || !photo || !email || !password) {
-            return toast.error('Please complete all required fields to proceed!')
+            return toast.error("🚨 Oops! Please fill out all the required fields to continue.")
         }
         if (!regex.test(password)) {
-            return toast.error(' Length must be at least 6 character with an Uppercase and letter')
+            return toast.error("🔒 Make sure your password is at least 6 characters long and contains an uppercase letter.")
         }
 
 
@@ -31,7 +31,7 @@ const Register = () => {
                 const user = result.user
                 updateProfile(user, { displayName: name, photoURL: photo })
                 form.reset()
-                toast.success('Register success')
+                toast.success(" You're all set! Registration completed successfully.")
                 navigate('/')
 
             })

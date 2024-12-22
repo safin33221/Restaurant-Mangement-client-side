@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { authContext } from '../../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const UpdateFood = () => {
     const { user } = useContext(authContext)
     const { id } = useParams()
     const [food, setFood] = useState({})
+    const navigate = useNavigate()
     useEffect(() => {
         axios.get(`http://localhost:8080/food/${id}`)
             .then(res => {
@@ -25,7 +27,8 @@ const UpdateFood = () => {
         console.log(formData);
         axios.put(`http://localhost:8080/foods/${id}`, formData)
             .then(res => {
-                console.log(res.data);
+                toast.success(' Update complete! Changes have been saved successfully.')
+                navigate('/myFoods')
             })
 
     }

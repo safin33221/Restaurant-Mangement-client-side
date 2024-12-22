@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { authContext } from '../Provider/AuthProvider';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddFood = () => {
     const { user } = useContext(authContext)
@@ -15,6 +16,7 @@ const AddFood = () => {
         axios.post('http://localhost:8080/foods', formData)
             .then(res => {
                 console.log(res.data);
+                toast.success(' Success! Your item has been added successfully')
             })
 
 

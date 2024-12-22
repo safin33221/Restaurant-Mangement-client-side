@@ -14,7 +14,7 @@ const Login = () => {
         const password = form.email.value
         signInWithEmailAndPass(email, password)
             .then(res => {
-                toast.success('Login Successful')
+                toast.success(' Welcome back! Login successful.')
                 navigate('/')
             })
     }

@@ -17,7 +17,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         singOutUser()
             .then(() => {
-                toast.success('Sign Out successful')
+                toast.success("You've logged out successfully")
             })
     }
     return (
