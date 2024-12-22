@@ -10,6 +10,7 @@ import FoodDetails from '../Components/FoodDetails';
 import FoodPurchase from '../Pages/FoodPurchase/FoodPurchase';
 import Gallery from '../Pages/Gallery/Gallery';
 import MyFoods from '../Pages/MyFood/MyFoods';
+import UpdateFood from '../Pages/Update/UpdateFood';
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/myFoods',
                 element: <MyFoods />
+            },
+            {
+                path: '//upadate-food/:id',
+                element: <UpdateFood />
             },
             {
                 path: '/addFood',
