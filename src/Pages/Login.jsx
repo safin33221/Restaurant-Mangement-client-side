@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { darkTheme } from '../Theme/Theme';
 
 const Login = () => {
-    const { signInWithEmailAndPass, signInWithGoogle } = useContext(authContext)
+    const { signInWithEmailAndPass, signInWithGoogle, darktheme } = useContext(authContext)
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -29,7 +30,7 @@ const Login = () => {
         <div className="hero  py-3">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-1/2">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className=" md:text-5xl font-bold">Login now!</h1>
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
@@ -37,11 +38,11 @@ const Login = () => {
                 </div>
 
                 {/* login form */}
-                <div className="card  max-w-sm shrink-0 shadow-2xl w-1/2">
+                <div className={`card   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Login now!</h1>
                     <form onSubmit={handleLogin}
-                        className="card-body">
-                        <label class="input   flex items-center gap-2 ring-1 focus:ring-green-100 focus:outline-none">
+                        className="card-body  ">
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -52,10 +53,10 @@ const Login = () => {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input name='email' type="text" class=" grow" placeholder="Email" />
+                            <input name='email' type="text" className=" grow " placeholder="Email" />
                         </label>
                         <div className="form-control">
-                            <label class="input input-bordered flex items-center gap-2">
+                            <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
@@ -66,7 +67,7 @@ const Login = () => {
                                         d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                <input name='password' type="text" class="grow" placeholder="password" />
+                                <input name='password' type="text" class="grow " placeholder="password" />
                             </label>
                         </div>
 
@@ -82,13 +83,13 @@ const Login = () => {
                                 <button onClick={handleLoginWithGoogle} className="btn w-full  bg-green-400 hover:bg-green-500">Login With Google</button>
                             </label>
                         </div>
-                        <div>
-                            <p>New in this site <Link to='/register'><span className='text-red-500 underline'>Register Now</span></Link></p>
-                        </div>
                     </form>
+                    <div className='mx-5 pb-3'>
+                        <p>New in this site <Link to='/register'><span className='text-red-500 underline'>Register Now</span></Link></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
