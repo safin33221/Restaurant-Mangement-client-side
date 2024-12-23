@@ -22,7 +22,7 @@ const MainLayout = () => {
         <StyledDiv>
             <div >
                 {/* Navbar section */}
-                <nav className={darktheme || 'bg-base-200'} >
+                <nav className={` ${darktheme || 'bg-base-200'} `}>
                     <Navbar />
                 </nav>
 

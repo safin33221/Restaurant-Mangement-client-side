@@ -23,14 +23,12 @@ const Navbar = () => {
                 toast.success("You've logged out successfully")
             })
     }
-    const toggleDarkMode = () => {
-
-    }
+    
     return (
-        <div className="navbar  w-11/12 mx-auto">
+        <div className="navbar w-11/12 mx-auto ">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -50,7 +48,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <img src={logo} alt="" className="w-24  rounded-full"/>
+            <img src={logo} alt="" className="w-20  rounded-full "/>
                 <a className="btn btn-ghost text-xl hidden lg:flex">Chef Hub</a>
             </div>
             <div className="flex-none gap-2 navbar-end">

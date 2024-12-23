@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const FoodCard = ({ food }) => {
     return (
-        <div className="max-w-md mx-auto  border-gray-200 border focus:border-green-600 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
+        <div className="w-11/12 md:w-full mx-auto   border-gray-200 border focus:border-green-600 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03] hover:inset-0 transition-all  duration-300">
             <img
                 src={food.foodImage}
                 alt={food.foodName}

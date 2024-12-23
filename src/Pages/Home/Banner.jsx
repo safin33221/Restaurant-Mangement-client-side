@@ -16,10 +16,10 @@ import slid10 from '../../assets/Banner/8.png'
 
 const Banner = () => {
     return (
-        <div className='py-12'>
+        <div className='py-12 -z-40'>
             {/* <img src={slid1} alt="" /> */}
             <Swiper
-                className='w-7/12 mx-auto relative'
+                className='w-7/12 mx-auto relative  '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -27,7 +27,7 @@ const Banner = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
-                draggable
+                draggable:true
                 pagination={{
                     clickable: true,
                 }}

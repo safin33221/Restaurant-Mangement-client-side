@@ -11,15 +11,15 @@ const Gallery = () => {
    
     return (
         
-        <div className='w-11/12 mx-auto'>
-            <div className="bg-[url('/src/assets/FoodGalley/banner.png')]  min-h-screen  mx-auto bg-cover object-contain my-2 flex justify-center items-center rounded-lg object-center overflow-hidden">
+        <div className=''>
+            <div className="bg-[url('/src/assets/FoodGalley/banner.png')]  min-h-screen  mx-auto bg-cover object-contain mb-2 flex justify-center items-center rounded-b-lg object-center overflow-hidden">
 
                 <div className=' '>
                     <h1 className='text-[#ffc700] font-bold text-3xl'>WellCome To Our Food Gallery</h1>
                 </div>
             </div>
 
-            <div className='my-10'>
+            <div className='my-10 w-11/12 mx-auto'>
                 <h1 className='text-center text-3xl font-bold'>See our Foods</h1>
                 <div className='grid grid-cols-12 gap-2'>
 

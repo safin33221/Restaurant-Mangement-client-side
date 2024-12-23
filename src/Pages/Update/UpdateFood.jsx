@@ -78,7 +78,7 @@ const UpdateFood = () => {
                             name="quantity"
                             required
                             defaultValue={food.quantity}
-                            min="1"
+                            
                             className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
                         />
                     </div>

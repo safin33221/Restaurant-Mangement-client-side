@@ -11,6 +11,7 @@ const FoodPurchase = () => {
     const { id } = useParams()
     const [food, setFood] = useState({})
     const navigate = useNavigate()
+    const [isDisabled, setIsDisabled] = useState(false)
     useEffect(() => {
         axios.get(`http://localhost:8080/food/${id}`)
             .then(res => {
@@ -18,24 +19,38 @@ const FoodPurchase = () => {
             })
     }, [id])
 
-
+    const ZerofoodQuantity = parseInt(food.quantity) === 0;
 
     const handleParchase = e => {
         e.preventDefault()
+        const formData = new FormData(e.target)
+        const parchaseData = Object.fromEntries(formData.entries())
+
+
 
         if (user?.email === food?.email) {
             toast.error('You cannot purchase items you’ve added yourself. Please explore other items!')
             return;
         }
-        const formData = new FormData(e.target)
-        const parchaseData = Object.fromEntries(formData.entries())
+
+        if (ZerofoodQuantity) {
+            setIsDisabled(true)
+            return toast.error('item is currently out of stock. Please  explore other available items!"')
+        }
+        if(parchaseData.quantity === false){
+            return toast.error('Please enter a quantity to proceed!')
+        }
+        if (parchaseData.quantity > food.quantity) {
+            return toast.error(`You can only purchase up to the available(${food.quantity}) quantity`)
+        }
+
         parchaseData.buying_Date = moment().format('LLL');
         console.log(parchaseData);
         axios.post('http://localhost:8080/food-parchase', parchaseData)
             .then(res => {
                 console.log(res.data);
                 toast.success('Purchase successful! We’ll get your items ready soon.')
-                // navigate('/myOrders')
+                navigate('/myOrders')
             })
 
     }
@@ -75,9 +90,9 @@ const FoodPurchase = () => {
                         <input
 
                             name="quantity"
-                            value={food.quantity}
-                            readOnly
-                            required
+                            placeholder={` Availbale ${food.quantity}`}
+                            type="number"
+                            
 
                             className="p-3 border bg-transparent rounded-lg focus:outline-none  focus:ring-2 focus:ring-green-200"
                         />
@@ -119,6 +134,7 @@ const FoodPurchase = () => {
                 </div>
                 <button
                     type="submit"
+                    disabled={isDisabled}
                     className="btn btn-outline  w-full block bg-green-400 hover:bg-green-500  hover:text-black text-xl"
                 >
                     Purchase

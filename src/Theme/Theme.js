@@ -15,4 +15,5 @@ export const darkTheme = {
     cardBorderColor: '#3A4B59', // Muted navy border
     accentColor: '#FF6B6B', // Coral red for links or highlights
     hoverColor: '#3E9141', // Muted green hover
+    
 };
