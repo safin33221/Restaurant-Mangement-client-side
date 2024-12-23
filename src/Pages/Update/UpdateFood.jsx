@@ -5,7 +5,7 @@ import { authContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const UpdateFood = () => {
-    const { user } = useContext(authContext)
+    const { user,darktheme } = useContext(authContext)
     const { id } = useParams()
     const [food, setFood] = useState({})
     const navigate = useNavigate()
@@ -34,57 +34,57 @@ const UpdateFood = () => {
     }
     return (
         <div>
-            <form onSubmit={(e) => handleUpdate(e, food._id)} className=" w-11/12 md:w-8/12 mx-auto p-3 bg-white shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
+            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-900 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Update Foods</h2>
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12 md:col-span-6 flex flex-col">
-                        <label className="text-lg text-gray-700">Food Name</label>
+                        <label className="text-lg ">Food Name</label>
                         <input
                             type="text"
                             name="foodName"
                             required
                             defaultValue={food?.foodName}
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-6 flex flex-col ">
-                        <label className="text-lg text-gray-700">Food Image URL</label>
+                        <label className="text-lg ">Food Image URL</label>
                         <input
                             type="url"
                             name="foodImage"
                             required
                             defaultValue={food.foodImage}
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-3 flex flex-col">
-                        <label className="text-lg text-gray-700">Food Category</label>
+                        <label className="text-lg ">Food Category</label>
                         <input
                             type="text"
                             name="foodCategory"
                             required
                             defaultValue={food.foodCategory}
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-3 flex flex-col">
-                        <label className="text-lg text-gray-700">Quantity</label>
+                        <label className="text-lg ">Quantity</label>
                         <input
                             type="number"
                             name="quantity"
                             required
                             defaultValue={food.quantity}
                             
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-3 flex flex-col">
-                        <label className="text-lg text-gray-700">Price</label>
+                        <label className="text-lg ">Price</label>
                         <input
                             type="number"
                             name="price"
@@ -92,48 +92,48 @@ const UpdateFood = () => {
                             defaultValue={food.price}
                             step="0.01"
                             min="0"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-3 flex flex-col">
-                        <label className="text-lg text-gray-700">Food Origin (Country)</label>
+                        <label className="text-lg ">Food Origin (Country)</label>
                         <input
                             type="text"
                             name="foodOrigin"
                             required
                             defaultValue={food.foodOrigin}
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="flex flex-col col-span-12">
-                        <label className="text-lg text-gray-700">Short Description</label>
+                        <label className="text-lg ">Short Description</label>
                         <textarea
                             name="description"
                             rows="3"
                             required
                             defaultValue={food.description}
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
                     <div className="flex flex-col col-span-12 space-y-2">
-                        <label className="text-lg text-gray-700">Added By</label>
+                        <label className="text-lg ">Added By</label>
                         <div className="flex space-x-4">
                             <input
                                 type="text"
                                 name='name'
                                 value={user?.displayName}
                                 readOnly
-                                className="p-3 border border-gray-300 rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             />
                             <input
                                 type="email"
                                 name='email'
                                 value={user?.email}
                                 readOnly
-                                className="p-3 border border-gray-300 rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             />
                         </div>
                     </div>
@@ -143,9 +143,9 @@ const UpdateFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-outline  w-full block hover:bg-green-200 font-bold hover:text-black text-xl"
+                    className="btn bg-green-400  w-full block hover:bg-green-700 font-bold hover:text-black text-xl"
                 >
-                    Add Item
+                    Update
                 </button>
             </form>
         </div>

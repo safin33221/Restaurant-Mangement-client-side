@@ -8,6 +8,7 @@ import "react-photo-album/rows.css";
 
 
 
+import item1 from '../../assets/FoodGalley/Fooditem/1.png'
 import item2 from '../../assets/FoodGalley/Fooditem/2.png'
 import item3 from '../../assets/FoodGalley/Fooditem/3.png'
 import item4 from '../../assets/FoodGalley/Fooditem/4.png'
@@ -17,19 +18,22 @@ import item7 from '../../assets/FoodGalley/Fooditem/7.png'
 import item8 from '../../assets/FoodGalley/Fooditem/8.png'
 import item9 from '../../assets/FoodGalley/Fooditem/9.png'
 import item10 from '../../assets/FoodGalley/Fooditem/10.png'
+import item11 from '../../assets/FoodGalley/Fooditem/11.png'
 import { useState } from "react";
 
 
 const photos = [
-    { src: item2, width: 400, height: 300, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
-    { src: item3, width: 400, height: 300, title: "Exotic Cuisine", description: "Fresh herbs and bold spices for a culinary masterpiece." },
-    { src: item4, width: 400, height: 300, title: "Healthy Salad", description: "Crisp greens with a light vinaigrette." },
-    { src: item5, width: 400, height: 300, title: "Dessert Bliss", description: "Rich chocolate and whipped cream." },
-    { src: item6, width: 400, height: 300, title: "Tropical Delight", description: "Fresh fruits and tropical flavors." },
-    { src: item7, width: 400, height: 300, title: "Seafood Special", description: "Grilled prawns with a lemon butter sauce." },
-    { src: item8, width: 400, height: 300, title: "Comfort Food", description: "Warm and hearty dishes for cold days." },
-    { src: item9, width: 400, height: 300, title: "Gourmet Platter", description: "Artisanal cheeses and fresh produce." },
-    { src: item10, width: 400, height: 300, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
+    { src: item1,  width: 500, height: 400, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
+    { src: item2,  width: 500, height: 400, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
+    { src: item3,  width: 500, height: 400, title: "Exotic Cuisine", description: "Fresh herbs and bold spices for a culinary masterpiece." },
+    { src: item4,  width: 500, height: 400, title: "Healthy Salad", description: "Crisp greens with a light vinaigrette." },
+    { src: item5,  width: 500, height: 400, title: "Dessert Bliss", description: "Rich chocolate and whipped cream." },
+    { src: item6,  width: 500, height: 400, title: "Tropical Delight", description: "Fresh fruits and tropical flavors." },
+    { src: item7,  width: 500, height: 400, title: "Seafood Special", description: "Grilled prawns with a lemon butter sauce." },
+    { src: item8,  width: 500, height: 400, title: "Comfort Food", description: "Warm and hearty dishes for cold days." },
+    { src: item9,  width: 500, height: 400, title: "Gourmet Platter", description: "Artisanal cheeses and fresh produce." },
+    { src: item10, width: 500, height: 400, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
+    { src: item11, width: 500, height: 400, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
 ];
 const Gallery = () => {
     const [index, setIndex] = useState(false);
@@ -55,7 +59,7 @@ const Gallery = () => {
                 <RowsPhotoAlbum
                     photos={photos}
                     layout="rows"
-                    targetRowHeight={150}
+                    
                     onClick={({ index: currentIndex }) => setIndex(currentIndex )} // open lightbox
                 />
 

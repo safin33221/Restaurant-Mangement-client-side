@@ -26,6 +26,14 @@ const FoodPurchase = () => {
         const formData = new FormData(e.target)
         const parchaseData = Object.fromEntries(formData.entries())
 
+        parchaseData.buying_Date = moment().format('LLL');
+        parchaseData.foodImage = food.foodImage
+        parchaseData.foodWoner = {
+            name: food.name,
+            email: food.email
+        }
+        parchaseData.foodId = food._id
+
 
 
         if (user?.email === food?.email) {
@@ -44,14 +52,8 @@ const FoodPurchase = () => {
             return toast.error(`You can only purchase up to the available(${food.quantity}) quantity`)
         }
 
-        parchaseData.buying_Date = moment().format('LLL');
-        parchaseData.foodImage = food.foodImage
-        parchaseData.foodWoner = {
-            name: food.name,
-            email: food.email
-        }
-        parchaseData.foodId = food._id
-        
+
+
         axios.post('http://localhost:8080/food-parchase', parchaseData)
             .then(res => {
                 console.log(res.data);

@@ -3,7 +3,7 @@ import { authContext } from '../Provider/AuthProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { darkTheme } from '../Theme/Theme';
+
 
 const AddFood = () => {
     const { user, darktheme } = useContext(authContext)
@@ -28,7 +28,7 @@ const AddFood = () => {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darkTheme || "bg-gray-800 border border-gray-900 "}`}>
+            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -38,7 +38,7 @@ const AddFood = () => {
                             type="text"
                             name="foodName"
                             required
-                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Food Name'
                         />
                     </div>
@@ -49,7 +49,7 @@ const AddFood = () => {
                             type="url"
                             name="foodImage"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Food Image URL'
                         />
                     </div>
@@ -60,7 +60,7 @@ const AddFood = () => {
                             type="text"
                             name="foodCategory"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Food Category'
                         />
                     </div>
@@ -71,7 +71,7 @@ const AddFood = () => {
                             type="number"
                             name="quantity"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Quantity'
                         />
                     </div>
@@ -83,7 +83,7 @@ const AddFood = () => {
                             name="price"
                             required
                             step="0.01"
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Price'
                         />
                     </div>
@@ -94,7 +94,7 @@ const AddFood = () => {
                             type="text"
                             name="foodOrigin"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Food Origin (Country)'
                         />
                     </div>
@@ -105,7 +105,7 @@ const AddFood = () => {
                             name="description"
                             rows="5"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
                             placeholder='Short Description'
                         />
                     </div>
@@ -118,7 +118,7 @@ const AddFood = () => {
                                 name='name'
                                 value={user?.displayName}
                                 readOnly
-                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
                                
                             />
                             <input
@@ -126,7 +126,7 @@ const AddFood = () => {
                                 name='email'
                                 value={user?.email}
                                 readOnly
-                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
                                 p
                             // className="p-3 border  bg-transparent rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
                             />
