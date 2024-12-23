@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { signUpWithEmailAndPass } = useContext(authContext)
+    const { signUpWithEmailAndPass, darktheme } = useContext(authContext)
     const navigate = useNavigate()
 
     const handleRegister = e => {
@@ -48,12 +48,12 @@ const Register = () => {
                 </div>
 
                 {/* login form */}
-                <div className="card  max-w-sm shrink-0 shadow-2xl w-1/2">
+                <div className={`card   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Register now!</h1>
                     <form onSubmit={handleRegister}
-                        className="card-body text-black">
+                        className="card-body ">
                         {/* userName */}
-                        <label class="input input-bordered flex items-center gap-2">
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -62,13 +62,13 @@ const Register = () => {
                                 <path
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                             </svg>
-                            <input name='name' type="text" class="grow text-black" placeholder="Username" />
+                            <input name='name' type="text" class="grow " placeholder="Username" />
                         </label>
-                        <label class="input input-bordered flex items-center gap-2">
+                        <label class={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                             <FaImages class="h-4 w-4 opacity-70"></FaImages>
                             <input name='photo' type="text" class="grow" placeholder="Search" />
                         </label>
-                        <label class="input input-bordered flex items-center gap-2">
+                        <label class={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -82,7 +82,7 @@ const Register = () => {
                             <input name='email' type="text" class="grow" placeholder="Email" />
                         </label>
 
-                        <label class="input input-bordered flex items-center gap-2">
+                        <label class={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -101,7 +101,7 @@ const Register = () => {
                         <div className="form-control mt-3">
                             <button className="btn bg-green-400 hover:bg-green-500">Register</button>
                         </div>
-                        
+
                     </form>
                     <div className='mx-8 py-3'>
                         <p>Already have an Account <Link to='/login'><span className='text-red-500 underline'>Login Now</span></Link></p>
