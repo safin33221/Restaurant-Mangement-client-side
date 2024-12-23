@@ -12,19 +12,20 @@ const Gallery = () => {
     return (
         
         <div className=''>
-            <div className="bg-[url('/src/assets/FoodGalley/banner.png')]  min-h-screen  mx-auto bg-cover object-contain mb-2 flex justify-center items-center rounded-b-lg object-center overflow-hidden">
+            <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:min-h-screen  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
 
-                <div className=' '>
-                    <h1 className='text-[#ffc700] font-bold text-3xl'>WellCome To Our Food Gallery</h1>
+            <div className=' text-center w-4/5 md:w-1/2 '>
+                    <h1 className='text-[#ffc700] font-bold text-3xl'>Our Food Gallery</h1>
+                    <p className='text-[#ffc700] font-bold text-sm opacity-70 my-10'>Dive into a selection of delectable dishes, each beautifully displayed with a title and description to give you a taste of what's to come. From vibrant salads to hearty main courses, each image tells a story of culinary excellence.</p>
                 </div>
             </div>
 
             <div className='my-10 w-11/12 mx-auto'>
-                <h1 className='text-center text-3xl font-bold'>See our Foods</h1>
+                <h1 className='text-center text-3xl font-bold mb-4'>See our Foods Collection_</h1>
                 <div className='grid grid-cols-12 gap-2'>
 
 
-                    <div className="col-span-8 h-60 relative group">
+                    <div className="col-span-12 md:col-span-8 h-60 relative group">
                         <img
                             className="h-60 object-cover object-center w-full"
                             src={item2}
@@ -41,7 +42,7 @@ const Gallery = () => {
                     </div>
 
 
-                    <div className='col-span-4 h-full relative group'>
+                    <div className='col-span-12 md:col-span-4  h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item3} alt="" />
 
@@ -56,7 +57,7 @@ const Gallery = () => {
 
 
 
-                    <div className='col-span-6 h-full relative group'>
+                    <div className='col-span-12 md:col-span-6 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item4} alt="" />
 
@@ -70,7 +71,7 @@ const Gallery = () => {
                     </div>
 
 
-                    <div className='col-span-6 h-full relative group'>
+                    <div className='col-span-12 md:col-span-6 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item5} alt="" />
 
@@ -84,7 +85,7 @@ const Gallery = () => {
                     </div>
 
 
-                    <div className='col-span-4 h-full relative group'>
+                    <div className='col-span-12 md:col-span-4 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item6} alt="" />
 
@@ -96,7 +97,7 @@ const Gallery = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='col-span-4 h-full relative group'>
+                    <div className='col-span-12 md:col-span-4 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item7} alt="" />
 
@@ -108,7 +109,7 @@ const Gallery = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='col-span-4 h-full relative group'>
+                    <div className='col-span-12 md:col-span-4 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item8} alt="" />
 
@@ -120,7 +121,7 @@ const Gallery = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='col-span-4 h-full relative group'>
+                    <div className='col-span-12 md:col-span-5 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item9} alt="" />
 
@@ -132,7 +133,7 @@ const Gallery = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='col-span-8 h-full relative group'>
+                    <div className='col-span-12 md:col-span-7 h-full relative group'>
                         {/* image */}
                         <img className='h-60 bg-cover object-center w-full' src={item10} alt="" />
 

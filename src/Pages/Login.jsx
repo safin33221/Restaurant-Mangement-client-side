@@ -38,7 +38,7 @@ const Login = () => {
                 </div>
 
                 {/* login form */}
-                <div className={`card   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
+                <div className={`   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2 ${darktheme && 'bg-gray-800'}`}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Login now!</h1>
                     <form onSubmit={handleLogin}
                         className="card-body  ">

@@ -14,10 +14,11 @@ const AllFood = () => {
     }, [search])
     return (
         <div>
-            <div className="bg-[url('/src/assets/AllFoodBanner.png')] min-h-screen object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center rounded-b-lg  overflow-hidden">
+            <div className="bg-[url('/src/assets/AllFoodBanner.png')] h-3/5    md:min-h-screen object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center  overflow-hidden">
 
-                <div className=' '>
-                    <h1 className='text-[#ffc700] font-bold text-3xl'>See All Foods</h1>
+                <div className=' text-center w-4/5 md:w-1/2'>
+                    <h1 className='text-[#ffc700] font-bold text-3xl'>A Feast for Every Taste</h1>
+                    <p className='text-[#ffc700] font-bold text-sm opacity-50 my-10'>Explore a world of culinary delights with our wide range of dishes. From appetizers to desserts, each page is a journey through flavors, ensuring there’s something to satisfy every craving.</p>
                 </div>
             </div>
 

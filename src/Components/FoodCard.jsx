@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { authContext } from '../Provider/AuthProvider';
 
 const FoodCard = ({ food }) => {
+    const { darktheme } = useContext(authContext)
     return (
-        <div className="w-11/12 md:w-full mx-auto   border-gray-200 border focus:border-green-600 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03] hover:inset-0 transition-all  duration-300">
+        <div className={`w-11/12 md:w-full mx-auto     focus:border-green-600 rounded-xl overflow-hidden hover:shadow-2xl  hover:scale-[1.03] transition-all  duration-300  shadow-2xl  ${darktheme && 'bg-gray-800'}`}
+
+        >
             <img
                 src={food.foodImage}
                 alt={food.foodName}
