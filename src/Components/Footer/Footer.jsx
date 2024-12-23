@@ -3,13 +3,14 @@ import { authContext } from '../../Provider/AuthProvider';
 import logo from "../../assets/logo/logo.png"
 
 const Footer = () => {
-    const {darktheme} =useContext(authContext)
+    const { darktheme } = useContext(authContext)
     return (
-        <footer className={`footer   p-10 ${darktheme ?"border-t-2": "bg-base-300"}`}>
+        <footer className={`footer   p-10 ${darktheme ? "bg-gray-800 border-t border-gray-900" : "bg-base-300"}`}>
+
             <aside>
-                <img src={logo} alt="" className='w-52 ' />
+                <img src={logo} alt="" className='w-28 rounded-full ' />
                 <p>
-                    Chef Hub Restaurant Mangement
+                    Master Chef Restaurant Mangement
                     <br />
                     Providing Service since 2010
                 </p>

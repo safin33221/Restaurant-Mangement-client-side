@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
 import logo from '../../assets/logo/logo.png'
 
 
@@ -23,7 +22,7 @@ const Navbar = () => {
                 toast.success("You've logged out successfully")
             })
     }
-    
+
     return (
         <div className="navbar w-11/12 mx-auto ">
             <div className="navbar-start">
@@ -48,8 +47,8 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-            <img src={logo} alt="" className="w-20  rounded-full "/>
-                <a className="btn btn-ghost text-xl hidden lg:flex">Chef Hub</a>
+                <img src={logo} alt="" className="w-12 rounded-full " />
+                <a className="btn btn-ghost text-xl hidden lg:flex">Master Chef</a>
             </div>
             <div className="flex-none gap-2 navbar-end">
                 <div className="menu menu-horizontal px-1 hidden lg:flex items-center ">
@@ -86,7 +85,7 @@ const Navbar = () => {
                             className="btn btn-xl bg-green-400 hover:bg-green-500  mx-2">Logout</button>
                         :
                         <Link to='/login'>
-                            <button className="btn btn-xl mx-2">Login</button>
+                            <button className="btn btn-xl mx-2 bg-green-400 hover:bg-green-500">Login</button>
                         </Link>
                 }
                 {

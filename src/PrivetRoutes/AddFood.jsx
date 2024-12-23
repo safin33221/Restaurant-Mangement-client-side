@@ -3,9 +3,10 @@ import { authContext } from '../Provider/AuthProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { darkTheme } from '../Theme/Theme';
 
 const AddFood = () => {
-    const { user } = useContext(authContext)
+    const { user, darktheme } = useContext(authContext)
     const navigate = useNavigate()
     const handleSubmit = e => {
         e.preventDefault()
@@ -20,14 +21,14 @@ const AddFood = () => {
                 console.log(res.data);
                 e.target.reset()
                 toast.success(' Success! Your item has been added successfully')
-                
+
             })
 
 
     }
     return (
         <div>
-            <form onSubmit={handleSubmit} className=" w-11/12 md:w-8/12 mx-auto p-3  shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
+            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darkTheme || "bg-gray-800 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -37,7 +38,8 @@ const AddFood = () => {
                             type="text"
                             name="foodName"
                             required
-                            className="p-3 border rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-green-200"
+                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Food Name'
                         />
                     </div>
 
@@ -47,7 +49,8 @@ const AddFood = () => {
                             type="url"
                             name="foodImage"
                             required
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Food Image URL'
                         />
                     </div>
 
@@ -57,7 +60,8 @@ const AddFood = () => {
                             type="text"
                             name="foodCategory"
                             required
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Food Category'
                         />
                     </div>
 
@@ -67,8 +71,8 @@ const AddFood = () => {
                             type="number"
                             name="quantity"
                             required
-                            min="1"
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Quantity'
                         />
                     </div>
 
@@ -79,8 +83,8 @@ const AddFood = () => {
                             name="price"
                             required
                             step="0.01"
-                            min="0"
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Price'
                         />
                     </div>
 
@@ -90,7 +94,8 @@ const AddFood = () => {
                             type="text"
                             name="foodOrigin"
                             required
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Food Origin (Country)'
                         />
                     </div>
 
@@ -98,28 +103,32 @@ const AddFood = () => {
                         <label className="text-lg ">Short Description</label>
                         <textarea
                             name="description"
-                            rows="3"
+                            rows="5"
                             required
-                            className="p-3 border  bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-100"
+                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                            placeholder='Short Description'
                         />
                     </div>
 
                     <div className="flex flex-col col-span-12 space-y-2">
                         <label className="text-lg ">Added By</label>
-                        <div className="flex space-x-4">
+                        <div className="flex gap-4 flex-col md:flex-row">
                             <input
                                 type="text"
                                 name='name'
                                 value={user?.displayName}
                                 readOnly
-                                className="p-3 border  bg-transparent rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                               
                             />
                             <input
                                 type="email"
                                 name='email'
                                 value={user?.email}
                                 readOnly
-                                className="p-3 border  bg-transparent rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
+                                className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-600"}`}
+                                p
+                            // className="p-3 border  bg-transparent rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
                             />
                         </div>
                     </div>
@@ -129,7 +138,7 @@ const AddFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-outline  w-full block hover:bg-green-200 font-bold hover:text-black text-xl"
+                    className="btn  w-full block bg-green-400 hover:bg-green-500 font-bold  text-xl"
                 >
                     Add Item
                 </button>
