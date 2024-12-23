@@ -41,6 +41,7 @@ const AuthProvider = ({ children }) => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
             setUser(currentUser)
+            setLoading(false)
             return () => {
                 unsubcribe()
             }
@@ -54,7 +55,8 @@ const AuthProvider = ({ children }) => {
         singOutUser,
         setDarkTheme,
         darktheme,
-        user
+        user,
+        loading
     }
     return (
         <authContext.Provider value={authValue}>
