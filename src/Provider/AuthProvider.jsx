@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase.config';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../Theme/Theme';
+import axios from 'axios';
 
 export const authContext = createContext()
 
@@ -41,12 +42,26 @@ const AuthProvider = ({ children }) => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
             setUser(currentUser)
+
+            if (currentUser?.email) {
+                const user = { email: currentUser.email }
+                axios.post("http://localhost:8080/jwt", user, { withCredentials: true })
+                    .then(res => {
+                        console.log('login >>>', res.data);
+                    })
+            }
+            else {
+                axios.post('http://localhost:8080/logOut', {}, { withCredentials: true })
+                    .then(res => {
+                        console.log("Log Out>>>>>", res.data);
+                    })
+            }
             setLoading(false)
             return () => {
                 unsubcribe()
             }
         })
-    }, [])
+    }, [user])
 
     const authValue = {
         signUpWithEmailAndPass,

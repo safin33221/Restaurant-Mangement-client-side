@@ -4,12 +4,13 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { authContext } from '../../Provider/AuthProvider';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 
 
 const AddFood = () => {
     const { user, darktheme } = useContext(authContext)
-    const navigate = useNavigate()
+    const axiosSecure = useAxiosSecure()
     const handleSubmit = e => {
         e.preventDefault()
         const data = new FormData(e.target)
@@ -18,7 +19,7 @@ const AddFood = () => {
         formData.Purchase_count = 0;
 
         console.log(formData);
-        axios.post('http://localhost:8080/foods', formData)
+        axiosSecure.post('/foods', formData)
             .then(res => {
                 console.log(res.data);
                 e.target.reset()

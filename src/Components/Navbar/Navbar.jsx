@@ -8,7 +8,7 @@ import logo from '../../assets/logo/logo.png'
 
 const Navbar = () => {
     const { user, singOutUser, darktheme, setDarkTheme } = useContext(authContext)
-    console.log(user);
+
     const links = <>
         <li ><NavLink to='/'>Home</NavLink></li>
         <li ><NavLink to='/allFoods'>All Foods</NavLink></li>

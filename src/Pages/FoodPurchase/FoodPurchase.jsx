@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import moment from "moment";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const FoodPurchase = () => {
@@ -12,8 +13,9 @@ const FoodPurchase = () => {
     const [food, setFood] = useState({})
     const navigate = useNavigate()
     const [isDisabled, setIsDisabled] = useState(false)
+    const axiosSecure = useAxiosSecure()
     useEffect(() => {
-        axios.get(`http://localhost:8080/food/${id}`)
+        axiosSecure.get(`/food/${id}`)
             .then(res => {
                 setFood(res.data)
             })

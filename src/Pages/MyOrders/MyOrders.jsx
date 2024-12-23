@@ -2,13 +2,15 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 
 const MyOrders = () => {
     const { user } = useContext(authContext)
     const [myFoods, setFoods] = useState([])
+    const axiosSecure = useAxiosSecure()
     useEffect(() => {
-        axios.get(`http://localhost:8080/parchases-food/${user?.email}`)
+        axiosSecure.get(`/parchases-food/${user?.email}`)
             .then(res => {
                 setFoods(res.data);
             })

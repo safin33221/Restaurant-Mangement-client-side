@@ -3,14 +3,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { authContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const UpdateFood = () => {
     const { user,darktheme } = useContext(authContext)
     const { id } = useParams()
     const [food, setFood] = useState({})
+    const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:8080/food/${id}`)
+        axiosSecure.get(`http://localhost:8080/food/${id}`)
             .then(res => {
                 setFood(res.data)
             })

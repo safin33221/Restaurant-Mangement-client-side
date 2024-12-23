@@ -3,13 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyFoods = () => {
     const { user } = useContext(authContext)
+    const axisoSecure = useAxiosSecure()
     console.log(user?.email);
     const [myFoods, setMyFoods] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:8080/my-foods/${user?.email}`)
+        axisoSecure.get(`/my-foods/${user?.email}`)
             .then(res => {
                 setMyFoods(res.data)
             })
