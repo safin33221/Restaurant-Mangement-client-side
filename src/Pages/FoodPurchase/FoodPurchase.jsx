@@ -50,6 +50,7 @@ const FoodPurchase = () => {
             name: food.name,
             email: food.email
         }
+        parchaseData.foodId = food._id
         
         axios.post('http://localhost:8080/food-parchase', parchaseData)
             .then(res => {
