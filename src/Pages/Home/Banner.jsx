@@ -27,7 +27,7 @@ const Banner = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
-                draggable:true
+            
                 pagination={{
                     clickable: true,
                 }}

@@ -37,7 +37,7 @@ const FoodPurchase = () => {
             setIsDisabled(true)
             return toast.error('item is currently out of stock. Please  explore other available items!"')
         }
-        if(parchaseData.quantity === false){
+        if (parchaseData.quantity === false) {
             return toast.error('Please enter a quantity to proceed!')
         }
         if (parchaseData.quantity > food.quantity) {
@@ -45,7 +45,12 @@ const FoodPurchase = () => {
         }
 
         parchaseData.buying_Date = moment().format('LLL');
-        console.log(parchaseData);
+        parchaseData.foodImage = food.foodImage
+        parchaseData.foodWoner = {
+            name: food.name,
+            email: food.email
+        }
+        
         axios.post('http://localhost:8080/food-parchase', parchaseData)
             .then(res => {
                 console.log(res.data);
@@ -92,7 +97,8 @@ const FoodPurchase = () => {
                             name="quantity"
                             placeholder={` Availbale ${food.quantity}`}
                             type="number"
-                            
+                            required
+
 
                             className="p-3 border bg-transparent rounded-lg focus:outline-none  focus:ring-2 focus:ring-green-200"
                         />

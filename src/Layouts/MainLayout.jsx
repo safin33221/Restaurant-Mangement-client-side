@@ -5,7 +5,6 @@ import Footer from '../Components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
-import { auth } from '../Firebase/firebase.config';
 import { authContext } from '../Provider/AuthProvider';
 
 const StyledDiv = styled.div`
@@ -15,14 +14,14 @@ const StyledDiv = styled.div`
 `;
 
 const MainLayout = () => {
-    const {darktheme} = useContext(authContext)
+    const { darktheme } = useContext(authContext)
 
     return (
 
         <StyledDiv>
             <div >
                 {/* Navbar section */}
-                <nav  className={` ${darktheme ?"bg-gray-800 border-b border-gray-900": "bg-base-300"}`}>
+                <nav className={` ${darktheme ? "bg-gray-800 border-b border-gray-900" : "bg-base-300"}`}>
                     <Navbar />
                 </nav>
 
