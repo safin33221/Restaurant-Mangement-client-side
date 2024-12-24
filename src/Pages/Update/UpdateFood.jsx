@@ -12,7 +12,7 @@ const UpdateFood = () => {
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
     useEffect(() => {
-        axiosSecure.get(`http://localhost:8080/food/${id}`)
+        axiosSecure.get(`/food/${id}`)
             .then(res => {
                 setFood(res.data)
             })

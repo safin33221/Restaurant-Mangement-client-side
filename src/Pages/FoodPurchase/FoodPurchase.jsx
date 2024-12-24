@@ -27,6 +27,7 @@ const FoodPurchase = () => {
         e.preventDefault()
         const formData = new FormData(e.target)
         const parchaseData = Object.fromEntries(formData.entries())
+        parchaseData.quantity = parseInt(parchaseData.quantity)
 
         parchaseData.buying_Date = moment().format('LLL');
         parchaseData.foodImage = food.foodImage

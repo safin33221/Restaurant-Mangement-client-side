@@ -16,6 +16,7 @@ const AddFood = () => {
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
+        formData.quantity = parseInt(formData.quantity)
         formData.Purchase_count = 0;
 
         console.log(formData);
@@ -122,7 +123,7 @@ const AddFood = () => {
                                 value={user?.displayName}
                                 readOnly
                                 className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
-                               
+
                             />
                             <input
                                 type="email"
