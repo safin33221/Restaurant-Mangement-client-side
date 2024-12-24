@@ -19,18 +19,17 @@ const FoodCard = ({ food }) => {
                 {/* <p className="mt-3 text-sm text-gray-700">{food.description}</p> */}
 
                 <div className="mt-2 flex items-center justify-between ">
-                    <span className="text-xl font-semibold">${food.price}</span>
+                    
+                    <span className="text-sm ">Price: {food.price}</span>
+                    <span className="text-sm ">Origin: {food.foodOrigin}</span>
+                </div>
+                <div className="mt-2 flex items-center justify-between ">
+                    
                     <span className="text-sm ">Quantity: {food.quantity}</span>
+                    <span className="text-sm ">Parchased : {food.Purchase_count}</span>
                 </div>
 
-                <div className="mt-2">
-                    <span className="block text-sm font-medium ">
-                        Origin: {food.foodOrigin}
-                    </span>
-                    {/* <span className="block text-sm font-medium text-gray-600">
-                        Added By: {food.addedBy.name} ({food.addedBy.email})
-                    </span> */}
-                </div>
+                
 
                 <Link to={`/food/${food._id}`}>
                     <button className="mt-5 w-full bg-green-400 py-2 px-4 rounded-lg hover:bg-green-500 text-black  transition duration-400 ease-in-out">
