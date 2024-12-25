@@ -19,8 +19,17 @@ const Login = () => {
         const password = form.password.value
         signInWithEmailAndPass(email, password)
             .then(res => {
-                console.log(res);
-                toast.success(' Welcome back! Login successful.')
+
+                toast.success(' Welcome back! Login successful.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+
+                })
                 navigate('/')
             })
             .catch(error => {
@@ -34,7 +43,7 @@ const Login = () => {
                         pauseOnHover: true,
                         draggable: true,
                         theme: "light",
-                       
+
                     })
                 }
             })
@@ -42,6 +51,16 @@ const Login = () => {
     const handleLoginWithGoogle = () => {
         signInWithGoogle()
             .then(() => {
+                toast.success(' Welcome back! Login successful.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+
+                })
                 navigate('/')
             })
     }

@@ -20,7 +20,16 @@ const Navbar = () => {
     const handleSignOut = () => {
         singOutUser()
             .then(() => {
-                toast.success("You've logged out successfully")
+                toast.success("You've logged out successfully", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+
+                })
                 navigate('/')
             })
     }

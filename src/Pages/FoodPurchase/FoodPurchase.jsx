@@ -40,19 +40,55 @@ const FoodPurchase = () => {
 
 
         if (user?.email === food?.email) {
-            toast.error('You cannot purchase items you’ve added yourself. Please explore other items!')
+            toast.error('You cannot purchase items you’ve added yourself. Please explore other items!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
             return;
         }
 
         if (ZerofoodQuantity) {
             setIsDisabled(true)
-            return toast.error('item is currently out of stock. Please  explore other available items!"')
+            return toast.error('item is currently out of stock. Please  explore other available items!"', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
         }
         if (parchaseData.quantity === false) {
-            return toast.error('Please enter a quantity to proceed!')
+            return toast.error('Please enter a quantity to proceed!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
         }
         if (parchaseData.quantity > food.quantity) {
-            return toast.error(`You can only purchase up to the available(${food.quantity}) quantity`)
+            return toast.error(`You can only purchase up to the available(${food.quantity}) quantity`, {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
         }
 
 
@@ -60,7 +96,16 @@ const FoodPurchase = () => {
         axiosSecure.post('/food-parchase', parchaseData)
             .then(res => {
                 console.log(res.data);
-                toast.success('Purchase successful! We’ll get your items ready soon.')
+                toast.success('Purchase successful! We’ll get your items ready soon.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+                   
+                })
                 navigate('/myOrders')
             })
 

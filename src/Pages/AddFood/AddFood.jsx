@@ -24,7 +24,16 @@ const AddFood = () => {
             .then(res => {
                 console.log(res.data);
                 e.target.reset()
-                toast.success(' Success! Your item has been added successfully')
+                toast.success(' Success! Your item has been added successfully', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+                   
+                })
 
             })
 

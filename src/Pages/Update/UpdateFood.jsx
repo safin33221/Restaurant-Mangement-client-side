@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const UpdateFood = () => {
-    const { user,darktheme } = useContext(authContext)
+    const { user, darktheme } = useContext(authContext)
     const { id } = useParams()
     const [food, setFood] = useState({})
     const axiosSecure = useAxiosSecure()
@@ -29,7 +29,16 @@ const UpdateFood = () => {
         console.log(formData);
         axiosSecure.put(`/foods/${id}`, formData)
             .then(res => {
-                toast.success(' Update complete! Changes have been saved successfully.')
+                toast.success(' Update complete! Changes have been saved successfully.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+
+                })
                 navigate('/myFoods')
             })
 
@@ -80,7 +89,7 @@ const UpdateFood = () => {
                             name="quantity"
                             required
                             defaultValue={food.quantity}
-                            
+
                             className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>

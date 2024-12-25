@@ -21,10 +21,28 @@ const Register = () => {
         const password = form.password.value
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!name || !photo || !email || !password) {
-            return toast.error("🚨 Oops! Please fill out all the required fields to continue.")
+            return toast.error("🚨 Oops! Please fill out all the required fields to continue.", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
         }
         if (!regex.test(password)) {
-            return toast.error("🔒 Make sure your password is at least 6 characters long and contains an uppercase letter.")
+            return toast.error("🔒 Make sure your password is at least 6 characters long and contains an uppercase letter.", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+               
+            })
         }
 
 
