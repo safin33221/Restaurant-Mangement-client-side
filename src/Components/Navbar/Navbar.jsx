@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
@@ -8,6 +8,7 @@ import logo from '../../assets/logo/logo.png'
 
 const Navbar = () => {
     const { user, singOutUser, darktheme, setDarkTheme } = useContext(authContext)
+    const navigate = useNavigate()
 
     const links = <>
         <li ><NavLink to='/'>Home</NavLink></li>
@@ -20,6 +21,7 @@ const Navbar = () => {
         singOutUser()
             .then(() => {
                 toast.success("You've logged out successfully")
+                navigate('/')
             })
     }
 

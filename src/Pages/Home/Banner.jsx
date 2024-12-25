@@ -17,15 +17,15 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className='py-12 relative '>
-            {/* <img src={slid1} alt="" /> */}
+        <div className='py-12  '>
+
             <Swiper
-                className='w-11/12 md:w-7/12 mx-auto  '
+                className='w-11/12 md:w-7/12 mx-auto relative'
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
                 autoplay={{
-                    delay: 2000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
 
@@ -46,21 +46,23 @@ const Banner = () => {
                 <SwiperSlide><img src={slid8} alt="Loading" /></SwiperSlide>
                 <SwiperSlide><img src={slid9} alt="Loading" /></SwiperSlide>
                 <SwiperSlide><img src={slid10} alt="loading" /></SwiperSlide>
+
+                <div className=" absolute md:w-1/2  top-12 md:top-24 right-16 md:right-52 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
+                    <h1 className='font-bold text-xs py-3 md:text-2xl'>
+                        WelCome to Our Restaurant
+                    </h1>
+                    <p className='text-sm hidden md:flex'>
+                        Step into a world of delightful flavors and warm hospitality! At our restaurant, we take pride in serving freshly prepared, delicious dishes crafted with the finest ingredients.
+                    </p>
+                    <Link to='/allFoods' className='btn btn-xs md:btn-sm btn-outline bg-green-400 hover:bg-green-500 hover:text-black ' >
+                        All Foods
+                    </Link >
+
+                </div>
             </Swiper>
 
 
-            <div className=" absolute w-52 md:w-96 top-1/4 md:top-40 left-1/4 md:left-1/3 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
-                <h1 className='font-bold text-xs py-3 md:text-2xl'>
-                    WelCome to Our Restaurant 
-                </h1>
-                <p className='text-sm hidden md:flex'>
-                Step into a world of delightful flavors and warm hospitality! At our restaurant, we take pride in serving freshly prepared, delicious dishes crafted with the finest ingredients.
-                </p>
-                <Link to='/allFoods' className='btn btn-xs md:btn-sm btn-outline bg-green-400 hover:bg-green-500 hover:text-black ' >
-                    All Foods
-                </Link >
-                <div></div>
-            </div>
+
 
         </div>
     );
