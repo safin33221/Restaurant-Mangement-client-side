@@ -13,6 +13,7 @@ import slid7 from '../../assets/Banner/7.png'
 import slid8 from '../../assets/Banner/8.png'
 import slid9 from '../../assets/Banner/9.png'
 import slid10 from '../../assets/Banner/8.png'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -48,18 +49,18 @@ const Banner = () => {
             </Swiper>
 
 
-            {/* <div className=" absolute w-1/2 top-40 bg-black opacity-50 p-5 rounded-lg text-white left-80 z-50 flex flex-col items-center justify-center text-center">
-                <h1 className='font-bold text-3xl'>
+            <div className=" absolute w-52 md:w-96 top-1/4 md:top-40 left-1/4 md:left-1/3 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
+                <h1 className='font-bold text-xs py-3 md:text-2xl'>
                     WelCome to Our Restaurant 
                 </h1>
-                <p>
-                Step into a world of delightful flavors and warm hospitality! At our restaurant, we take pride in serving freshly prepared, delicious dishes crafted with the finest ingredients. Whether you're here for a casual meal, a special occasion, or just to enjoy good company, our welcoming atmosphere and attentive service will ensure an unforgettable dining experience. Sit back, relax, and savor every bite – your culinary journey starts here!
+                <p className='text-sm hidden md:flex'>
+                Step into a world of delightful flavors and warm hospitality! At our restaurant, we take pride in serving freshly prepared, delicious dishes crafted with the finest ingredients.
                 </p>
-                <button className='btn btn-outline bg-green-400 hover:bg-green-500 hover:text-black ' >
+                <Link to='/allFoods' className='btn btn-xs md:btn-sm btn-outline bg-green-400 hover:bg-green-500 hover:text-black ' >
                     All Foods
-                </button>
+                </Link >
                 <div></div>
-            </div> */}
+            </div>
 
         </div>
     );

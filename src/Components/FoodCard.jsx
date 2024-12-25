@@ -10,7 +10,7 @@ const FoodCard = ({ food }) => {
         >
             <img
                 src={food.foodImage}
-                alt={food.foodName}
+                alt="loading"
                 className="w-full h-48 object-cover"
             />
             <div className="p-4">

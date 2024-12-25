@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import axios from 'axios';
+
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+
 import { authContext } from '../../Provider/AuthProvider';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
@@ -37,7 +37,7 @@ const AddFood = () => {
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12 md:col-span-6 flex flex-col">
-                        <label className="text-lg ">Food Name</label>
+                        <label className="text-lg">Food Name</label>
                         <input
                             type="text"
                             name="foodName"

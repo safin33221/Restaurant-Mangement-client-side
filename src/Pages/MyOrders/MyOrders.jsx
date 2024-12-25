@@ -115,7 +115,7 @@ const MyOrders = () => {
                                             {
                                                 myFoods.map(food => <tr key={food._id} >
                                                     <td className='px-4 py-4 text-sm   whitespace-nowrap'>
-                                                        <img src={food.foodImage} className="w-20 rounded-lg" alt="" />
+                                                        <img src={food.foodImage} className="w-20 rounded-lg" alt="loading" />
                                                     </td>
 
                                                     <td className='px-4 py-4 text-sm   whitespace-nowrap'>

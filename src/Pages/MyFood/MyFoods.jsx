@@ -8,7 +8,6 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const MyFoods = () => {
     const { user } = useContext(authContext)
     const axisoSecure = useAxiosSecure()
-    console.log(user?.email);
     const [myFoods, setMyFoods] = useState([])
     useEffect(() => {
         axisoSecure.get(`/my-foods/${user?.email}`)
@@ -30,8 +29,8 @@ const MyFoods = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axisoSecure.delete(`http://localhost:8080/foods/${id}`)
-                    .then(res => {
-                        console.log(res.data);
+                    .then(() => {
+                        
                         const remaining = myFoods.filter(food => food._id !== id)
                         setMyFoods(remaining)
                         Swal.fire({
