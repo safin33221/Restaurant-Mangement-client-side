@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
-import { darkTheme } from '../Theme/Theme';
+import loginAnimation from '../assets/Lottie/login.json'
+import Lottie from 'lottie-react';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Login = () => {
     const { signInWithEmailAndPass, signInWithGoogle, darktheme } = useContext(authContext)
+    const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -28,13 +32,9 @@ const Login = () => {
     }
     return (
         <div className="hero  py-3">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left w-1/2">
-                    <h1 className=" md:text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
+            <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
+                <div className="text-center lg:text-left w-1/2 md:w-1/2 ">
+                    <Lottie animationData={loginAnimation} />
                 </div>
 
                 {/* login form */}
@@ -55,8 +55,8 @@ const Login = () => {
                             </svg>
                             <input name='email' type="text" className=" grow " placeholder="Email" />
                         </label>
-                        <div className="form-control">
-                            <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                        <div className="form-control relative">
+                            <label className={`input input-bordered   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
@@ -67,8 +67,9 @@ const Login = () => {
                                         d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                <input name='password' type="text" class="grow " placeholder="password" />
+                                <input name='password' type={showPass ? 'text' : 'password'} class="grow " placeholder="password" />
                             </label>
+                            <button type='button' className='absolute right-3 top-4' onClick={() => setShowPass(!showPass)}>{showPass ? <FaEye /> : <FaEyeSlash></FaEyeSlash>}</button>
                         </div>
 
                         <div className="form-control">
@@ -80,7 +81,7 @@ const Login = () => {
                         </div>
                         <div className="form-control">
                             <label class="">
-                                <button onClick={handleLoginWithGoogle} className="btn w-full  bg-green-400 hover:bg-green-500">Login With Google</button>
+                                <button type='submit' onClick={handleLoginWithGoogle} className="btn w-full  bg-green-400 hover:bg-green-500">Login With Google</button>
                             </label>
                         </div>
                     </form>
