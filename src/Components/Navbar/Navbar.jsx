@@ -48,7 +48,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <img src={logo} alt="" className="w-12 rounded-full " />
-                <a className="btn btn-ghost text-xl hidden lg:flex">Master Chef</a>
+                <a className=" mx-3 font-bold  text-2xl hidden lg:flex">Master Chef</a>
             </div>
             <div className="flex-none gap-2 navbar-end">
                 <div className="menu menu-horizontal px-1 hidden lg:flex items-center ">

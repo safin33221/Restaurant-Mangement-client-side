@@ -16,7 +16,7 @@ const AllFood = () => {
     }, [search])
     return (
         <div>
-            <div className="bg-[url('/src/assets/AllFoodBanner.png')] h-3/5    md:min-h-screen object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center  overflow-hidden">
+            <div className="bg-[url('/src/assets/AllFoodBanner.png')] h-3/5    md:h-[300px] object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center  overflow-hidden">
 
                 <div className=' text-center w-4/5 md:w-1/2'>
                     <h1 className='text-[#ffc700] font-bold text-3xl'>A Feast for Every Taste</h1>

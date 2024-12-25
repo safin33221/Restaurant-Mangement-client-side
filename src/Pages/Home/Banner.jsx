@@ -16,10 +16,10 @@ import slid10 from '../../assets/Banner/8.png'
 
 const Banner = () => {
     return (
-        <div className='py-12 -z-40'>
+        <div className='py-12 relative '>
             {/* <img src={slid1} alt="" /> */}
             <Swiper
-                className='w-7/12 mx-auto relative  '
+                className='w-11/12 md:w-7/12 mx-auto  '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -27,7 +27,7 @@ const Banner = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
-            
+
                 pagination={{
                     clickable: true,
                 }}
@@ -46,6 +46,20 @@ const Banner = () => {
                 <SwiperSlide><img src={slid9} alt="Loading" /></SwiperSlide>
                 <SwiperSlide><img src={slid10} alt="loading" /></SwiperSlide>
             </Swiper>
+
+
+            {/* <div className=" absolute w-1/2 top-40 bg-black opacity-50 p-5 rounded-lg text-white left-80 z-50 flex flex-col items-center justify-center text-center">
+                <h1 className='font-bold text-3xl'>
+                    WelCome to Our Restaurant 
+                </h1>
+                <p>
+                Step into a world of delightful flavors and warm hospitality! At our restaurant, we take pride in serving freshly prepared, delicious dishes crafted with the finest ingredients. Whether you're here for a casual meal, a special occasion, or just to enjoy good company, our welcoming atmosphere and attentive service will ensure an unforgettable dining experience. Sit back, relax, and savor every bite – your culinary journey starts here!
+                </p>
+                <button className='btn btn-outline bg-green-400 hover:bg-green-500 hover:text-black ' >
+                    All Foods
+                </button>
+                <div></div>
+            </div> */}
 
         </div>
     );

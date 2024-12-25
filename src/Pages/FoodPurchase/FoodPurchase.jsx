@@ -57,7 +57,7 @@ const FoodPurchase = () => {
 
 
 
-        axios.post('http://localhost:8080/food-parchase', parchaseData)
+        axiosSecure.post('/food-parchase', parchaseData)
             .then(res => {
                 console.log(res.data);
                 toast.success('Purchase successful! We’ll get your items ready soon.')

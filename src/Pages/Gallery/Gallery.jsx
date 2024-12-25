@@ -46,7 +46,7 @@ const Gallery = () => {
 
 
         <div className="" >
-            <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:min-h-screen  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
+            <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:h-[300px]  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
 
                 <div className=' text-center w-4/5 md:w-1/2 '>
                     <h1 className='text-[#ffc700] font-bold text-3xl'>Our Food Gallery</h1>

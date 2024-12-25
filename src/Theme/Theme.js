@@ -16,4 +16,5 @@ export const darkTheme = {
     accentColor: '#FF6B6B', // Coral red for links or highlights
     hoverColor: '#3E9141', // Muted green hover
     
+    
 };

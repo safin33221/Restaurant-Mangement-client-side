@@ -27,7 +27,7 @@ const UpdateFood = () => {
 
 
         console.log(formData);
-        axios.put(`http://localhost:8080/foods/${id}`, formData)
+        axiosSecure.put(`/foods/${id}`, formData)
             .then(res => {
                 toast.success(' Update complete! Changes have been saved successfully.')
                 navigate('/myFoods')
@@ -122,7 +122,7 @@ const UpdateFood = () => {
 
                     <div className="flex flex-col col-span-12 space-y-2">
                         <label className="text-lg ">Added By</label>
-                        <div className="flex space-x-4">
+                        <div className="flex flex-col gap-3">
                             <input
                                 type="text"
                                 name='name'

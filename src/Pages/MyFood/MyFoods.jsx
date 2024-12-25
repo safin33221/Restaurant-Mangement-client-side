@@ -29,17 +29,18 @@ const MyFoods = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8080/foods/${id}`)
+                axisoSecure.delete(`http://localhost:8080/foods/${id}`)
                     .then(res => {
                         console.log(res.data);
                         const remaining = myFoods.filter(food => food._id !== id)
                         setMyFoods(remaining)
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
                     })
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
+
             }
         });
 
