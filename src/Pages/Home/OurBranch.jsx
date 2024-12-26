@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { authContext } from "../../Provider/AuthProvider";
 
 const OurBranch = () => {
+    const {darktheme} = useContext(authContext)
     const [branchData, setBranchData] = useState([])
     useEffect(() => {
         axios.get('http://localhost:8080/branches')
@@ -21,7 +23,7 @@ const OurBranch = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
                 {
                     branchData.map((branch, idx) =>
-                        <div key={idx} className={`bg-green-300 max-w-96 md:w-full  rounded-lg shadow-lg overflow-hidden mx-auto transition-transform transform `}
+                        <div key={idx} className={`w-11/12 md:w-full mx-auto     focus:border-green-600 rounded-xl overflow-hidden hover:shadow-2xl  hover:scale-[1.03] transition-all  duration-300  shadow-2xl  ${darktheme && 'bg-gray-800'}`}
                             data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
                             data-aos-offset="-100"
                             data-aos-delay="10"
@@ -33,21 +35,21 @@ const OurBranch = () => {
 
                             
                             <div className="p-6 flex flex-col justify-between">
-                                <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+                                <h2 className="text-2xl font-semibold  mb-2">
                                     {branch.name}
                                 </h2>
-                                <p className="text-gray-600">
+                                <p className="">
                                     <span className="font-bold">Address:</span> {branch.address}
                                 </p>
-                                <p className="text-gray-600">
+                                <p className="">
                                     <span className="font-bold">Phone:</span> {branch.phone}
                                 </p>
-                                <p className="text-gray-600">
+                                <p className="">
                                     <span className="font-bold">Email:</span> {branch.email}
                                 </p>
                                 <div className="mt-4">
-                                    <p className="font-bold text-gray-700">Operating Hours:</p>
-                                    <ul className="text-gray-600 text-sm list-disc list-inside">
+                                    <p className="font-bold ">Operating Hours:</p>
+                                    <ul className=" text-sm list-disc list-inside">
                                         <li>Mon-Fri: {branch.operatingHours.mondayToFriday}</li>
                                         <li>Sat: {branch.operatingHours.saturday}</li>
                                         <li>Sun: {branch.operatingHours.sunday}</li>
