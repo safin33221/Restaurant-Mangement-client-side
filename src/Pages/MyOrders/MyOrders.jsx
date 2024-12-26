@@ -29,7 +29,7 @@ const MyOrders = () => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/food-parchase/${id}`)
                     .then(res => {
-                        console.log(res.data);
+                        
                         const remaining = myFoods.filter(food => food._id !== id)
                         setFoods(remaining)
 

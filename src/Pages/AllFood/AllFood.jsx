@@ -8,7 +8,7 @@ const AllFood = () => {
     const {darktheme} = useContext(authContext)
     const [foods, setFoods] = useState([])
     const [search, setSearch] = useState('')
-    console.log(search);
+    
     useEffect(() => {
         axios.get(`https://restaurant-management-server-side-wheat.vercel.app/foods?search=${search}`)
             .then(res => {

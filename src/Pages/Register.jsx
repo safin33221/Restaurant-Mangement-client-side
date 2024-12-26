@@ -49,7 +49,7 @@ const Register = () => {
 
         signUpWithEmailAndPass(email, password)
             .then(result => {
-                console.log(result);
+                
                 const user = result.user
                 updateProfile(user, { displayName: name, photoURL: photo })
                 form.reset()
@@ -58,7 +58,7 @@ const Register = () => {
 
             })
             .catch(error => {
-                console.log(error.code);
+                
                 if (error.code === "auth/email-already-in-use") {
                     return toast.error('Already have an account on this email !', {
                         position: "top-right",

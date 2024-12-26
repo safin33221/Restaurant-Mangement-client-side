@@ -20,10 +20,10 @@ const AddFood = () => {
         formData.quantity = parseInt(formData.quantity)
         formData.Purchase_count = 0;
 
-        console.log(formData);
+        
         axiosSecure.post('/foods', formData)
             .then(res => {
-                console.log(res.data);
+                
                 e.target.reset()
                 toast.success(' Success! Your item has been added successfully', {
                     position: "top-right",

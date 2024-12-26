@@ -40,20 +40,20 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log(currentUser);
+
             setUser(currentUser)
 
             if (currentUser?.email) {
                 const user = { email: currentUser.email }
                 axios.post("https://restaurant-management-server-side-wheat.vercel.app/jwt", user, { withCredentials: true })
                     .then(res => {
-                        console.log('login >>>', res.data);
+                       
                     })
             }
             else {
                 axios.post('https://restaurant-management-server-side-wheat.vercel.app/logOut', {}, { withCredentials: true })
                     .then(res => {
-                        console.log("Log Out>>>>>", res.data);
+                        
                     })
             }
             setLoading(false)

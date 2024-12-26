@@ -18,17 +18,17 @@ const UpdateFood = () => {
                 setFood(res.data)
             })
     }, [id])
-    console.log(food);
+
     const handleUpdate = (e, id) => {
         e.preventDefault()
-        console.log(id);
+
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
         formData.quantity = parseInt(formData.quantity)
 
 
-        console.log(formData);
+
         axiosSecure.put(`/foods/${id}`, formData)
             .then(res => {
                 toast.success(' Update complete! Changes have been saved successfully.', {
