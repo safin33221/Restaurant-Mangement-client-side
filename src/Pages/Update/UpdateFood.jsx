@@ -134,7 +134,7 @@ const UpdateFood = () => {
 
                     <div className="flex flex-col col-span-12 space-y-2">
                         <label className="text-lg ">Added By</label>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col md:flex-row gap-3">
                             <input
                                 type="text"
                                 name='name'
