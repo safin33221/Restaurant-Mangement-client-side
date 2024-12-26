@@ -30,7 +30,7 @@ const Register = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
         }
         if (!regex.test(password)) {
@@ -42,7 +42,7 @@ const Register = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
         }
 
@@ -56,6 +56,21 @@ const Register = () => {
                 toast.success(" You're all set! Registration completed successfully.")
                 navigate('/')
 
+            })
+            .catch(error => {
+                console.log(error.code);
+                if (error.code === "auth/email-already-in-use") {
+                    return toast.error('Already have an account on this email !', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "light",
+
+                    })
+                }
             })
     }
     return (
