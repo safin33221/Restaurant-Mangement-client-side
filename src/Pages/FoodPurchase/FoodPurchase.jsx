@@ -55,7 +55,7 @@ const FoodPurchase = () => {
 
         if (ZerofoodQuantity) {
             setIsDisabled(true)
-            return toast.error('item is currently out of stock. Please  explore other available items!"', {
+            return toast.error('item is currently out of stock. Please  explore other available items!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,

@@ -24,6 +24,7 @@ const UpdateFood = () => {
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
+        formData.quantity = parseInt(formData.quantity)
 
 
         console.log(formData);
