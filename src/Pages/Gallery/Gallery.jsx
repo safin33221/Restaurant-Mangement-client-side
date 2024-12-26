@@ -20,6 +20,7 @@ import item9 from '../../assets/FoodGalley/Fooditem/9.png'
 import item10 from '../../assets/FoodGalley/Fooditem/10.png'
 import item11 from '../../assets/FoodGalley/Fooditem/11.png'
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const photos = [
@@ -46,6 +47,7 @@ const Gallery = () => {
 
 
         <div className="" >
+            <Helmet><title>Master Chef || Gallery</title></Helmet>
             <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:h-[300px]  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
 
                 <div className=' text-center w-4/5 md:w-1/2 '>

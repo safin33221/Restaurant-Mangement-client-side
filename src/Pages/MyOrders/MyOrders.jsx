@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 
 const MyOrders = () => {
@@ -45,6 +46,7 @@ const MyOrders = () => {
     }
     return (
         <div className='min-h-[300px]'>
+            <Helmet><title>Master Chef || My Orders</title></Helmet>
             {
                 myFoods.length === 0 ?
                     <div className='font-bold text-center my-10 text-3xl'>

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import { authContext } from '../../Provider/AuthProvider';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -41,6 +42,8 @@ const AddFood = () => {
     }
     return (
         <div>
+
+            <Helmet><title>Master Chef || Add Food</title></Helmet>
             <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
 

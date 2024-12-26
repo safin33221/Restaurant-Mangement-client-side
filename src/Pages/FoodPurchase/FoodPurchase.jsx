@@ -5,6 +5,7 @@ import { authContext } from "../../Provider/AuthProvider";
 import moment from "moment";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 
 const FoodPurchase = () => {
@@ -113,6 +114,7 @@ const FoodPurchase = () => {
 
     return (
         <div>
+            <Helmet><title>Master Chef || Food Parchase</title></Helmet>
             <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3  shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
                 <h2 className="text-2xl font-semibold text-center text-green-500">Food Purchase</h2>
 

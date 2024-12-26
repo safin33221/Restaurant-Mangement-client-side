@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { authContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateFood = () => {
     const { user, darktheme } = useContext(authContext)
@@ -46,6 +47,7 @@ const UpdateFood = () => {
     }
     return (
         <div>
+            <Helmet><title>Master Chef || Update Food</title></Helmet>
             <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-900 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Update Foods</h2>
 

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import loginAnimation from '../assets/Lottie/login.json'
 import Lottie from 'lottie-react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -66,6 +67,7 @@ const Login = () => {
     }
     return (
         <div className="hero  py-3">
+            <Helmet><title>Master Chef || Login</title></Helmet>
             <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-1/2 md:w-1/2 ">
                     <Lottie animationData={loginAnimation} />

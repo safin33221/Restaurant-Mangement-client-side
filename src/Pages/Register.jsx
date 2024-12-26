@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 import Lottie from 'lottie-react';
 import registerAnimation from '../assets/Lottie/register.json'
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { signUpWithEmailAndPass, darktheme } = useContext(authContext)
@@ -59,6 +60,7 @@ const Register = () => {
     }
     return (
         <div className="hero  py-3">
+            <Helmet><title>Master Chef || Register</title></Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-4/5 md:w-2/5">
                     <Lottie animationData={registerAnimation} />
