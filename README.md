@@ -4,7 +4,7 @@
 The Restaurant Management project is designed to streamline and manage restaurant operations effectively. It allows users to explore and manage menus, food items, and branches seamlessly.
 
 ## Live Page
-[ Master Chef Restaurant ](https://restaurant-management-caeb2.web.app/allFoods)
+[ Master Chef Restaurant ](https://restaurant-management-caeb2.web.app)
 
 ## Key Features
 - **Branch Management**: Easily view and manage different restaurant branches.
