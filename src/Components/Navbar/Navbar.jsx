@@ -112,10 +112,10 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-white text-black  rounded-box z-[5] mt-3 w-52 p-2 shadow">
                             <li>
-                                <a className="justify-between">
+                                <NavLink to='/myProfile' className="justify-between">
                                     Profile
-                                    <span className="badge">New</span>
-                                </a>
+                                    
+                                </NavLink>
                             </li>
                             <li><NavLink to='/myFoods'>My Foods</NavLink></li>
                             <li><NavLink to='/addFood'>Add food</NavLink></li>

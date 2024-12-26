@@ -28,7 +28,7 @@ const MyFoods = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axisoSecure.delete(`http://localhost:8080/foods/${id}`)
+                axisoSecure.delete(`/foods/${id}`)
                     .then(() => {
                         
                         const remaining = myFoods.filter(food => food._id !== id)

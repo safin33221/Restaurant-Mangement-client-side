@@ -14,6 +14,7 @@ import UpdateFood from '../Pages/Update/UpdateFood';
 import MyOrders from '../Pages/MyOrders/MyOrders';
 import AddFood from '../Pages/AddFood/AddFood';
 import PrivetRoute from '../PrivetRoutes/PrivetRoute';
+import MyProfile from '../Pages/MyProfile/MyProfile';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/food/:id',
                 element: <FoodDetails />
+            },
+            {
+                path: '/myProfile',
+                element: <PrivetRoute><MyProfile /></PrivetRoute>
             },
             {
                 path: '/myFoods',

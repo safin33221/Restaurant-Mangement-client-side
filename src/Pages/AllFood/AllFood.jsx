@@ -9,7 +9,7 @@ const AllFood = () => {
     const [search, setSearch] = useState('')
     console.log(search);
     useEffect(() => {
-        axios.get(`http://localhost:8080/foods?search=${search}`)
+        axios.get(`https://restaurant-management-server-side-wheat.vercel.app/foods?search=${search}`)
             .then(res => {
                 setFoods(res.data)
             })
