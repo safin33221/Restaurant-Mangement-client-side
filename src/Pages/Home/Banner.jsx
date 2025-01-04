@@ -17,10 +17,10 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className='py-12  '>
+        <div className=''>
 
             <Swiper
-                className='w-11/12 md:w-7/12 mx-auto relative'
+                className=' mx-auto relative  object-cover bg-cover h-[600px] '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -47,7 +47,7 @@ const Banner = () => {
                 <SwiperSlide><img src={slid9} alt="Loading" /></SwiperSlide>
                 <SwiperSlide><img src={slid10} alt="loading" /></SwiperSlide>
 
-                <div className=" absolute md:w-1/2  top-12 md:top-24 right-16 md:right-52 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
+                {/* <div className=" absolute md:w-1/2  top-12 md:top-24 right-16 md:right-52 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
                     <h1 className='font-bold text-xs py-3 md:text-2xl'>
                         WelCome to Our Restaurant
                     </h1>
@@ -58,7 +58,7 @@ const Banner = () => {
                         All Foods
                     </Link >
 
-                </div>
+                </div> */}
             </Swiper>
 
 
