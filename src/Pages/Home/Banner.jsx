@@ -14,13 +14,15 @@ import slid8 from '../../assets/Banner/8.png'
 import slid9 from '../../assets/Banner/9.png'
 import slid10 from '../../assets/Banner/8.png'
 import { Link } from 'react-router-dom';
+const slides = [slid1, slid2, slid3, slid4, slid5, slid6, slid7, slid8, slid9, slid10];
+
 
 const Banner = () => {
     return (
         <div className=''>
 
             <Swiper
-                className=' mx-auto relative  object-cover bg-cover md:h-[500px] bg-center  '
+                className=' md:h-[400px] object-cover w-full mt-16  '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -36,16 +38,11 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
 
             >
-                <SwiperSlide><img src={slid1} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid2} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid3} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid4} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid5} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid6} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid7} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid8} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid9} alt="Loading" /></SwiperSlide>
-                <SwiperSlide><img src={slid10} alt="loading" /></SwiperSlide>
+                {
+                    slides.map(slid=><SwiperSlide><img src={slid} alt="Loading" className='w-full md:h-[400px]  md:bg-contain' /></SwiperSlide>)
+                }
+                
+                
 
                 {/* <div className=" absolute md:w-1/2  top-12 md:top-24 right-16 md:right-52 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
                     <h1 className='font-bold text-xs py-3 md:text-2xl'>
