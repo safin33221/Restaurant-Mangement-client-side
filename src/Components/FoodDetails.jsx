@@ -14,7 +14,7 @@ const FoodDetails = () => {
     }, [id])
     
     return (
-        <div className="w-10/12 grid md:grid-cols-2 grid-cols-1 mx-auto my-10 focus:border-green-600  rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
+        <div className="w-10/12 grid md:grid-cols-2 grid-cols-1 mx-auto my-10 mt-24 focus:border-green-600  rounded-xl shadow-lg overflow-hidden hover:shadow-2xl  hover:scale-[1.03]  transition-all  duration-300">
             <Helmet><title>Master Chef || Food Details</title></Helmet> 
             <img
                 src={food.foodImage}

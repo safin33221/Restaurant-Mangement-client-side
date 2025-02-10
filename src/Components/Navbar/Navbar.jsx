@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
-import logo from '../../assets/logo/logo.png'
+import logo from '../../assets/logo/titleLogo.png'
 
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar text-white fixed top-0 z-50 backdrop-blur-sm mx-auto ">
+        <div className="navbar text-black bg-base-200 bg-blend-overlay bg-opacity-70 fixed top-0 z-50 backdrop-blur-sm mx-auto  px-[45px]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden">

@@ -20,7 +20,7 @@ const Banner = () => {
         <div className=''>
 
             <Swiper
-                className=' mx-auto relative  object-cover bg-cover h-[600px] '
+                className=' mx-auto relative  object-cover bg-cover md:h-[500px] bg-center  '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}

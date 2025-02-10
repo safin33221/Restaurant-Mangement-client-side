@@ -76,13 +76,13 @@ const Register = () => {
     return (
         <div className="hero  py-3">
             <Helmet><title>Master Chef || Register</title></Helmet>
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col lg:flex-row-reverse mt-12">
                 <div className="text-center lg:text-left w-4/5 md:w-2/5">
                     <Lottie animationData={registerAnimation} />
                 </div>
 
                 {/* login form */}
-                <div className={`card   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
+                <div className={`card border-2   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Register now!</h1>
                     <form onSubmit={handleRegister}
                         className="card-body ">

@@ -41,10 +41,10 @@ const AddFood = () => {
 
     }
     return (
-        <div>
+        <div className='mt-24'>
 
             <Helmet><title>Master Chef || Add Food</title></Helmet>
-            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
+            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto border-2 shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
 
                 <div className="grid grid-cols-12 gap-4">

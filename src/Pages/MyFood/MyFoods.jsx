@@ -46,7 +46,7 @@ const MyFoods = () => {
 
     }
     return (
-        <div className="min-h-[300px]">
+        <div className="min-h-[300px] mt-24">
             <Helmet><title>Master Chef || My Foods</title></Helmet>
             {
                 myFoods.length === 0 ?
