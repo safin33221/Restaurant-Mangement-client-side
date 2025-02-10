@@ -8,13 +8,13 @@ const OurBranch = () => {
     const {darktheme} = useContext(authContext)
     const [branchData, setBranchData] = useState([])
     useEffect(() => {
-        axios.get('https://restaurant-management-server-side-wheat.vercel.app/branches')
+        axios.get('http://localhost:8080/branches')
             .then(res => {
                 setBranchData(res.data)
             })
     }, [])
     useEffect(() => {
-        AOS.init({ duration: 1500 }); // Adjust duration if needed
+        AOS.init({ duration: 1000 }); // Adjust duration if needed
     }, []);
    
     return (

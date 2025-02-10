@@ -5,9 +5,12 @@ import { authContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet-async';
+import { imageUpload } from '../../Api/Utils/imageHost';
+import { ImSpinner9 } from "react-icons/im";
 
 const UpdateFood = () => {
     const { user, darktheme } = useContext(authContext)
+    const [loading, setLoading] = useState(false)
     const { id } = useParams()
     const [food, setFood] = useState({})
     const axiosSecure = useAxiosSecure()
@@ -19,18 +22,23 @@ const UpdateFood = () => {
             })
     }, [id])
 
-    const handleUpdate = (e, id) => {
+    const handleUpdate = async (e, id) => {
         e.preventDefault()
+        setLoading(true)
 
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
         formData.quantity = parseInt(formData.quantity)
+        const image = await imageUpload(formData.foodImage)
+        formData.foodImage = image
+        console.log(formData);
 
 
 
         axiosSecure.put(`/foods/${id}`, formData)
             .then(res => {
+                setLoading(false)
                 toast.success(' Update complete! Changes have been saved successfully.', {
                     position: "top-right",
                     autoClose: 2000,
@@ -48,7 +56,7 @@ const UpdateFood = () => {
     return (
         <div>
             <Helmet><title>Master Chef || Update Food</title></Helmet>
-            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-900 border border-gray-900 "}`}>
+            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border-2 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-900 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Update Foods</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -63,14 +71,15 @@ const UpdateFood = () => {
                         />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6 flex flex-col ">
-                        <label className="text-lg ">Food Image URL</label>
+                    <div className="col-span-12 md:col-span-6 flex flex-col  ">
+                        <label className="text-lg ">Choose Food Image </label>
                         <input
-                            type="url"
+                            type="file"
+                            draggable
                             name="foodImage"
                             required
                             defaultValue={food.foodImage}
-                            className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
+                            className={` border border-gray-300 p-3 rounded-lg flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
@@ -159,7 +168,9 @@ const UpdateFood = () => {
                     type="submit"
                     className="btn bg-green-400  w-full block hover:bg-green-700 font-bold hover:text-black text-xl"
                 >
-                    Update
+                    {
+                        loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Update"
+                    }
                 </button>
             </form>
         </div>

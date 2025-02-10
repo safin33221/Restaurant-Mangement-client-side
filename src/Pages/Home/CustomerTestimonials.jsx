@@ -14,7 +14,7 @@ import { authContext } from '../../Provider/AuthProvider';
 const CustomerTestimonials = () => {
     const { darktheme } = useContext(authContext)
     return (
-        <div className='w-11/12 mx-auto py-8'>
+        <div className=' mx-auto py-8'>
             <h1 className='text-3xl font-bold text-center py-4'> Trusted by Thousands of Happy Customers_</h1>
 
             <Swiper

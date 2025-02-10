@@ -5,16 +5,18 @@ import { authContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
 const AllFood = () => {
-    const {darktheme} = useContext(authContext)
+    
+    const { darktheme } = useContext(authContext)
     const [foods, setFoods] = useState([])
     const [search, setSearch] = useState('')
-    
+    const [sort, setSort] = useState('')
+
     useEffect(() => {
-        axios.get(`https://restaurant-management-server-side-wheat.vercel.app/foods?search=${search}`)
+        axios.get(`http://localhost:8080/foods?search=${search}&sort=${sort}`)
             .then(res => {
                 setFoods(res.data)
             })
-    }, [search])
+    }, [search,sort])
     return (
         <div>
             <Helmet><title>Master Chef || All Foods</title></Helmet>
@@ -30,9 +32,17 @@ const AllFood = () => {
             {/* food Card section */}
             <div>
                 <h1 className='text-center font-bold text-3xl   w-fit mx-auto'>Our Food items_</h1>
-                <div className="join flex items-center justify-center mt-5">
+                <div className="join flex items-center justify-center mt-5 ">
                     <input onChange={(e) => setSearch(e.target.value)} className={`input input-bordered  focus:outline-none flex items-center join-item focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
                     <button className="btn join-item bg-green-400 hover:bg-green-600 rounded-r-full">Search</button>
+                    <div className="felx mx-2" >
+                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5  rounded-xl focus:outline-none border-green-300 p-3" name="" id="">
+                            <option  aria-readonly >Sort</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="dscending">Dscending</option>
+                        </select>
+                        
+                    </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 mx-auto my-10'>
                     {

@@ -7,7 +7,7 @@ const FoodDetails = () => {
     const { id } = useParams()
     const [food, setFood] = useState({})
     useEffect(() => {
-        axios.get(`https://restaurant-management-server-side-wheat.vercel.app/food/${id}`)
+        axios.get(`http://localhost:8080/food/${id}`)
             .then(res => {
                 setFood(res.data)
             })
