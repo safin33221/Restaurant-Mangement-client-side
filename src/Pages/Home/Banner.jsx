@@ -39,7 +39,7 @@ const Banner = () => {
 
             >
                 {
-                    slides.map(slid=><SwiperSlide><img src={slid} alt="Loading" className='w-full md:h-[400px]  md:bg-contain' /></SwiperSlide>)
+                    slides.map((slid,idx)=>< SwiperSlide key={idx}><img src={slid} alt={'Loading'} className='w-full md:h-[400px]  md:bg-contain' /></SwiperSlide>)
                 }
                 
                 

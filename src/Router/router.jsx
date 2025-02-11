@@ -15,12 +15,14 @@ import MyOrders from '../Pages/MyOrders/MyOrders';
 import AddFood from '../Pages/AddFood/AddFood';
 import PrivetRoute from '../PrivetRoutes/PrivetRoute';
 import MyProfile from '../Pages/MyProfile/MyProfile';
+import Error from '../Pages/Error';
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement:<Error/>,
         children: [
             {
                 path: '/',

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 
 import { toast } from 'react-toastify';
@@ -6,24 +6,31 @@ import { toast } from 'react-toastify';
 import { authContext } from '../../Provider/AuthProvider';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet-async';
+import { imageUpload } from '../../Api/Utils/imageHost';
+import { ImSpinner9 } from 'react-icons/im';
 
 
 
 const AddFood = () => {
     const { user, darktheme } = useContext(authContext)
     const axiosSecure = useAxiosSecure()
-    const handleSubmit = e => {
+    const [loading,setLoading] = useState(false)
+    const handleSubmit = async e => {
         e.preventDefault()
+        setLoading(true)
         const data = new FormData(e.target)
 
         const formData = Object.fromEntries(data.entries())
         formData.quantity = parseInt(formData.quantity)
         formData.Purchase_count = 0;
+        const image = await imageUpload(formData.foodImage)
+        formData.foodImage = image
 
-        
+
         axiosSecure.post('/foods', formData)
             .then(res => {
-                
+                setLoading(false)
+
                 e.target.reset()
                 toast.success(' Success! Your item has been added successfully', {
                     position: "top-right",
@@ -33,7 +40,7 @@ const AddFood = () => {
                     pauseOnHover: true,
                     draggable: true,
                     theme: "light",
-                   
+
                 })
 
             })
@@ -62,11 +69,12 @@ const AddFood = () => {
                     <div className="col-span-12 md:col-span-6 flex flex-col ">
                         <label className="text-lg ">Food Image URL</label>
                         <input
-                            type="url"
+                            type="file"
+                            draggable
                             name="foodImage"
                             required
-                            className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-700"}`}
-                            placeholder='Food Image URL'
+
+                            className={` border border-gray-300 p-2 rounded-lg flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
@@ -156,7 +164,9 @@ const AddFood = () => {
                     type="submit"
                     className="btn  w-full block bg-green-400 hover:bg-green-500 font-bold  text-xl"
                 >
-                    Add Item
+                    {
+                        loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Add"
+                    }
                 </button>
             </form>
         </div>

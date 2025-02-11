@@ -32,7 +32,7 @@ const UpdateFood = () => {
         formData.quantity = parseInt(formData.quantity)
         const image = await imageUpload(formData.foodImage)
         formData.foodImage = image
-        console.log(formData);
+     
 
 
 

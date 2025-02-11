@@ -5,10 +5,10 @@ import { Helmet } from 'react-helmet';
 const MyProfile = () => {
     const {user} = useContext(authContext)
     return (
-        <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-24 px-3">
+        <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-20 px-3 min-h-96 ">
             <Helmet><title>Master Chef || Profile</title></Helmet>
   
-            <div className="w-full max-w-md bg-white shadow-lg p-5 rounded relative border-2 ">
+            <div className="w-full max-w-md bg-white shadow-lg p-5 rounded-lg relative border-2  ">
                 
                 <h1 className="text-2xl font-bold text-center mb-5">Your Profile</h1>
 
