@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase.config';
-import { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme } from '../Theme/Theme';
+
+
 import axios from 'axios';
 
 export const authContext = createContext()
@@ -11,8 +11,20 @@ export const authContext = createContext()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [darktheme, setDarkTheme] = useState(false)
+
     const GooglePorvider = new GoogleAuthProvider()
+    const [theme, settheme] = useState(localStorage.getItem('theme') || 'pastel')
+
+    // toggle theme
+    const toggleTheme = () => {
+        const newTheme = theme === 'pastel' ? 'forest' : 'pastel'
+        settheme(newTheme)
+        localStorage.setItem('theme', newTheme)
+        document.documentElement.setAttribute('data-theme', newTheme)
+    }
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme)
+    }, [theme])
 
     //create user with email and password
     const signUpWithEmailAndPass = (email, password) => {
@@ -46,11 +58,11 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser.email }
                 axios.post("http://localhost:8080/jwt", user, { withCredentials: true })
-                    
+
             }
             else {
                 axios.post('http://localhost:8080/logOut', {}, { withCredentials: true })
-                
+
             }
             setLoading(false)
             return () => {
@@ -64,15 +76,17 @@ const AuthProvider = ({ children }) => {
         signInWithEmailAndPass,
         signInWithGoogle,
         singOutUser,
-        setDarkTheme,
-        darktheme,
+ 
+        toggleTheme,
+        theme,
+       
         user,
         loading
     }
     return (
         <authContext.Provider value={authValue}>
 
-            <ThemeProvider theme={darktheme ? darkTheme : lightTheme}>{children}</ThemeProvider>
+            {children}
         </authContext.Provider>
     );
 };

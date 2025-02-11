@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom';
 const TopFoods = () => {
 
     const [foods, setFoods] = useState([])
+    
     useEffect(() => {
         axios.get('http://localhost:8080/top-foods')
             .then(res => {
                 setFoods(res.data)
+                
             })
     }, [])
 
@@ -26,7 +28,7 @@ const TopFoods = () => {
                 }
             </div>
             <Link to='/allFoods' className=' my-5 block'>
-                <button className="btn bg-green-400 hover:bg-green-600">
+                <button className="btn">
                     See All Foods
                 </button>
             </Link>

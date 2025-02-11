@@ -25,7 +25,8 @@ const CustomerTestimonials = () => {
                 loop={true}
                 autoplay={{
                     delay: 0,
-                    stopOnLastSlide: false
+                    stopOnLastSlide: false,
+                    pauseOnMouseEnter:true
 
                 }}
 
@@ -47,61 +48,61 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 min-h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900 ' : 'bg-base-200'}`}
+                        className={`max-w-96 border min-h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900 ' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600 "} text-center`}>I had an amazing experience at the Gulshan branch. The staff were very helpful and welcoming. I will definitely be coming back!</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— Raihan Ahmed</p>
+                        <p className={`italic  text-center`}>I had an amazing experience at the Gulshan branch. The staff were very helpful and welcoming. I will definitely be coming back!</p>
+                        <p className={`font-bold  text-center mt-4`}>— Raihan Ahmed</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600"} text-center`}>"Every time I visit, I'm greeted with a warm smile and excellent service. The staff here really know how to make customers feel valued."</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— Shakib Khan</p>
+                        <p className={`italic  text-center`}>"Every time I visit, I'm greeted with a warm smile and excellent service. The staff here really know how to make customers feel valued."</p>
+                        <p className={`font-bold  text-center mt-4`}>— Shakib Khan</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600"} text-center`}>I’ve been coming here for years, and I always leave satisfied. The food and service are consistently great!</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— Farhana Sultana</p>
+                        <p className={`italic  text-center`}>I’ve been coming here for years, and I always leave satisfied. The food and service are consistently great!</p>
+                        <p className={`font-bold  text-center mt-4`}>— Farhana Sultana</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600"} text-center`}>I visited the Sylhet branch last week, and I was amazed by the hospitality. The staff is incredibly friendly and attentive.</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— Tariq Rahman</p>
+                        <p className={`italic  text-center`}>I visited the Sylhet branch last week, and I was amazed by the hospitality. The staff is incredibly friendly and attentive.</p>
+                        <p className={`font-bold  text-center mt-4`}>— Tariq Rahman</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600"} text-center`}>Exceptional service at the Baridhara branch! The team is always helpful and makes sure everything is perfect.</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— Zahidul Islam</p>
+                        <p className={`italic  text-center`}>Exceptional service at the Baridhara branch! The team is always helpful and makes sure everything is perfect.</p>
+                        <p className={`font-bold  text-center mt-4`}>— Zahidul Islam</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
                     >
 
-                        <p className={`italic ${darktheme || "text-gray-600"} text-center`}>The service at the Banani branch is fantastic! The team always goes above and beyond to ensure a pleasant visit.</p>
-                        <p className={`font-bold ${darktheme || "text-gray-800"} text-center mt-4`}>— safin chowdhruy</p>
+                        <p className={`italic  text-center`}>The service at the Banani branch is fantastic! The team always goes above and beyond to ensure a pleasant visit.</p>
+                        <p className={`font-bold  text-center mt-4`}>— safin chowdhruy</p>
                     </div>
                 </SwiperSlide>
 

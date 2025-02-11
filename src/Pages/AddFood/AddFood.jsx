@@ -51,7 +51,7 @@ const AddFood = () => {
         <div className='mt-24'>
 
             <Helmet><title>Master Chef || Add Food</title></Helmet>
-            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto border-2 shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
+            <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto border shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -74,7 +74,7 @@ const AddFood = () => {
                             name="foodImage"
                             required
 
-                            className={` border border-gray-300 p-2 rounded-lg flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
+                            className={` border border-gray-300 p-2 rounded-full  flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
@@ -162,7 +162,7 @@ const AddFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn  w-full block bg-green-400 hover:bg-green-500 font-bold  text-xl"
+                    className="btn    px-10  font-bold  text-xl"
                 >
                     {
                         loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Add"

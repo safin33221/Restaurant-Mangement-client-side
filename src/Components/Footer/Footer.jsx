@@ -3,9 +3,9 @@ import { authContext } from '../../Provider/AuthProvider';
 import logo from "../../assets/logo/logo.png"
 
 const Footer = () => {
-    const { darktheme } = useContext(authContext)
+    
     return (
-        <footer className={`footer    p-10 ${darktheme ? "bg-gray-800 border-t border-gray-900" : "bg-base-300"}`}>
+        <footer className={`footer shadow-2xl   p-10 `}>
 
             <aside>
                 <img src={logo} alt="" className='w-28 rounded-full ' />

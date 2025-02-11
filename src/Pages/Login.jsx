@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
-    const { signInWithEmailAndPass, signInWithGoogle, darktheme } = useContext(authContext)
+    const { signInWithEmailAndPass, signInWithGoogle,theme } = useContext(authContext)
     const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
 
@@ -74,11 +74,11 @@ const Login = () => {
                 </div>
 
                 {/* login form */}
-                <div className={`   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2 ${darktheme && 'bg-gray-800'}`}>
+                <div className={`   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2 border rounded-xl  `}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Login now!</h1>
                     <form onSubmit={handleLogin}
                         className="card-body  ">
-                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 `}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -92,7 +92,7 @@ const Login = () => {
                             <input name='email' type="text" className=" grow " placeholder="Email" />
                         </label>
                         <div className="form-control relative">
-                            <label className={`input input-bordered   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                            <label className={`input input-bordered   focus:outline-none flex items-center gap-2`}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
@@ -113,11 +113,11 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-3">
-                            <button className="btn bg-green-400 hover:bg-green-500">Login</button>
+                            <button className={`btn ${theme === 'light' && 'bg-green-400 hover:bg-green-500'}`}>Login</button>
                         </div>
                         <div className="form-control">
                             <label >
-                                <button type='submit' onClick={handleLoginWithGoogle} className="btn w-full  bg-green-400 hover:bg-green-500">Login With Google</button>
+                                <button type='submit' onClick={handleLoginWithGoogle} className="btn w-full ">Login With Google</button>
                             </label>
                         </div>
                     </form>

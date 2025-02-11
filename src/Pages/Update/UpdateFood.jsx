@@ -56,7 +56,7 @@ const UpdateFood = () => {
     return (
         <div>
             <Helmet><title>Master Chef || Update Food</title></Helmet>
-            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border-2 md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-900 border border-gray-900 "}`}>
+            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10 `}>
                 <h2 className="text-2xl font-semibold text-center text-green-500">Update Foods</h2>
 
                 <div className="grid grid-cols-12 gap-4">
@@ -166,7 +166,7 @@ const UpdateFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn bg-green-400  w-full block hover:bg-green-700 font-bold hover:text-black text-xl"
+                    className="btn   w-full block font-bold  text-xl"
                 >
                     {
                         loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Update"

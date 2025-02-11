@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import FoodCard from '../../Components/FoodCard';
 import { authContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import Loading from '../../Components/Loading';
 
 const AllFood = () => {
     
@@ -10,13 +11,16 @@ const AllFood = () => {
     const [foods, setFoods] = useState([])
     const [search, setSearch] = useState('')
     const [sort, setSort] = useState('')
+    const [loading,setLoading] = useState(true)
 
     useEffect(() => {
         axios.get(`http://localhost:8080/foods?search=${search}&sort=${sort}`)
             .then(res => {
                 setFoods(res.data)
+                setLoading(false)
             })
     }, [search,sort])
+    if(loading) return <Loading/>
     return (
         <div>
             <Helmet><title>Master Chef || All Foods</title></Helmet>
@@ -33,11 +37,11 @@ const AllFood = () => {
             <div>
                 <h1 className='text-center font-bold text-3xl   w-fit mx-auto'>Our Food items_</h1>
                 <div className="join flex items-center justify-center mt-5 ">
-                    <input onChange={(e) => setSearch(e.target.value)} className={`input input-bordered  focus:outline-none flex items-center join-item focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
-                    <button className="btn join-item bg-green-400 hover:bg-green-600 rounded-r-full">Search</button>
+                    <input onChange={(e) => setSearch(e.target.value)} className={`input input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
+                    <button className="btn  rounded-r-full">Search</button>
                     <div className="felx mx-2" >
-                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5  rounded-xl focus:outline-none border-green-300 p-3" name="" id="">
-                            <option  aria-readonly >Sort</option>
+                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5  rounded-xl  p-3" name="" id="">
+                          
                             <option value="ascending">Ascending</option>
                             <option value="dscending">Dscending</option>
                         </select>

@@ -98,12 +98,12 @@ const Register = () => {
                 </div>
 
                 {/* login form */}
-                <div className={`card border-2   max-w-sm shrink-0 shadow-2xl w-11/12 md:w-1/2${darktheme && 'bg-gray-800'}`}>
+                <div className={`card border rounded-xl   max-w-sm  shadow-2xl w-11/12 md:w-1/2`}>
                     <h1 className="text-3xl mt-3 font-bold text-center">Register now!</h1>
                     <form onSubmit={handleRegister}
                         className="card-body ">
                         {/* userName */}
-                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 `}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -114,11 +114,11 @@ const Register = () => {
                             </svg>
                             <input name='name' type="text" className="grow "   placeholder="Username" />
                         </label>
-                        <label className={`input input-bordered  focus:outline-none flex items-center gap-3 ${darktheme && "bg-gray-600"}`}>
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-3 `}>
                             <FaImages className="h-4 w-4 opacity-70"></FaImages>
                             <input name='photo' type="file" />
                         </label>
-                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                        <label className={`input input-bordered  focus:outline-none flex items-center gap-2 `}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -133,7 +133,7 @@ const Register = () => {
                         </label>
 
                         <div className="form-control relative">
-                            <label className={`input input-bordered   focus:outline-none flex items-center gap-2 ${darktheme && "bg-gray-600"}`}>
+                            <label className={`input input-bordered   focus:outline-none flex items-center gap-2 `}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
@@ -152,7 +152,7 @@ const Register = () => {
 
 
                         <div className="form-control mt-3">
-                            <button className="btn bg-green-400 hover:bg-green-500">
+                            <button className="btn ">
                                 {
                                     loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Register"
                                 }
