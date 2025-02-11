@@ -119,7 +119,7 @@ const Navbar = () => {
                             <li><NavLink to='/myOrders'>My Orders</NavLink></li>
                             <li>
                                 <button onClick={handleSignOut}
-                                    className="btn btn-sm btn-outline mx-2">Logout</button>
+                                    className="btn btn-sm btn-outline mx-2 my-2">Logout</button>
                             </li>
                         </ul>
                     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const promotions = [
     {
         title: "Buy 1 Get 1 Free – Selected Dishes!",
@@ -29,9 +30,11 @@ const Offer = () => {
                                 <h3 className="text-xl font-bold ">{promo.title}</h3>
                                 <p className="">{promo.details}</p>
                                 <p className=" font-medium mt-3">{promo.availability}</p>
-                                <button className="mt-4 px-4 py-2 btn   btn-outline hover:bg-gray-100 hover:text-black    duration-400 ease-in-out absolute bottom-4   transition">
-                                    Order Now
-                                </button>
+                                <Link to='/allFoods'>
+                                    <button className="mt-4 px-4 py-2 btn   btn-outline hover:bg-gray-100 hover:text-black    duration-400 ease-in-out absolute bottom-4   transition">
+                                        Order Now
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

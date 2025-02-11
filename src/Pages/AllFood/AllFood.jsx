@@ -44,8 +44,8 @@ const AllFood = () => {
                     <div className="felx mx-2" >
                         <select onChange={(e) => setSort(e.target.value)} className="border mr-5 select-sm rounded-xl  " name="" id="">
 
-                            <option value="ascending">Ascending</option>
-                            <option value="dscending">Dscending</option>
+                            <option value="ascending">Ascending </option>
+                            <option value="dscending">Descending </option>
                         </select>
 
                     </div>
