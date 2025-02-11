@@ -33,7 +33,7 @@ const FoodCard = ({ food }) => {
 
                 <Link to={`/food/${food._id}`}>
                     <button className="mt-5 w-full btn btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out">
-                        View Details
+                        See more
                     </button>
                 </Link>
             </div>

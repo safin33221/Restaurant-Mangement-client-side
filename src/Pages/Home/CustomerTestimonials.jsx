@@ -15,7 +15,7 @@ const CustomerTestimonials = () => {
     const { darktheme } = useContext(authContext)
     return (
         <div className=' mx-auto py-8'>
-            <h1 className='text-3xl font-bold text-center py-4'> Trusted by Thousands of Happy Customers_</h1>
+            <h1 className='text-3xl font-bold text-center  mb-8'> Trusted by Thousands of Happy Customers_</h1>
 
             <Swiper
                 className='w-11/12  mx-auto '
@@ -48,7 +48,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border min-h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900 ' : 'bg-base-200'}`}
+                        className={`max-w-96 border min-h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>I had an amazing experience at the Gulshan branch. The staff were very helpful and welcoming. I will definitely be coming back!</p>
@@ -58,7 +58,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>"Every time I visit, I'm greeted with a warm smile and excellent service. The staff here really know how to make customers feel valued."</p>
@@ -68,7 +68,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>I’ve been coming here for years, and I always leave satisfied. The food and service are consistently great!</p>
@@ -78,7 +78,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>I visited the Sylhet branch last week, and I was amazed by the hospitality. The staff is incredibly friendly and attentive.</p>
@@ -88,7 +88,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>Exceptional service at the Baridhara branch! The team is always helpful and makes sure everything is perfect.</p>
@@ -98,7 +98,7 @@ const CustomerTestimonials = () => {
                 <SwiperSlide>
                     <div
 
-                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  ${darktheme ? 'bg-gray-900' : 'bg-base-200'}`}
+                        className={`max-w-96 border h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
                     >
 
                         <p className={`italic  text-center`}>The service at the Banani branch is fantastic! The team always goes above and beyond to ensure a pleasant visit.</p>

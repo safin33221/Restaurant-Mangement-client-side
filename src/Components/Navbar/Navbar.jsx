@@ -7,7 +7,7 @@ import logo from '../../assets/logo/titleLogo.png'
 
 
 const Navbar = () => {
-    const { user, singOutUser,theme,toggleTheme } = useContext(authContext)
+    const { user, singOutUser, theme, toggleTheme } = useContext(authContext)
     const navigate = useNavigate()
 
     const links = <>
@@ -35,8 +35,8 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-base-300 bg-blend-overlay bg-opacity-70 fixed top-0 z-50 backdrop-blur-sm mx-auto  px-[45px]">
-            <div className="navbar-start">
+        <div className="navbar  bg-base-300 bg-blend-overlay bg-opacity-70 fixed top-0 z-50 backdrop-blur-sm mx-auto  md:px-[45px] flex justify-between">
+            <div className=" ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden">
                         <svg
@@ -54,14 +54,14 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[3] text-black mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content  rounded-box z-[3] bg-base-100 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
                 <img src={logo} alt="loding" className="w-12 rounded-full " />
                 <a className=" mx-3 font-bold  text-2xl hidden lg:flex">Master Chef</a>
             </div>
-            <div className="flex-none gap-2 navbar-end">
+            <div className="flex-none gap-2  ">
                 <div className="menu menu-horizontal px-1 hidden lg:flex items-center ">
                     {links}
 
@@ -91,10 +91,7 @@ const Navbar = () => {
                 </label>
 
                 {
-                    user ?
-                        <button onClick={handleSignOut}
-                            className="btn btn-xl mx-2">Logout</button>
-                        :
+                    user ? null :
                         <Link to='/login'>
                             <button className="btn  mx-2">Get Start</button>
                         </Link>
@@ -110,16 +107,20 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-white text-black  rounded-box z-[5] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100   rounded-box z-[5] mt-3 w-52 p-2 shadow">
                             <li>
                                 <NavLink to='/myProfile' className="justify-between">
                                     Profile
-                                    
+
                                 </NavLink>
                             </li>
                             <li><NavLink to='/myFoods'>My Foods</NavLink></li>
                             <li><NavLink to='/addFood'>Add food</NavLink></li>
                             <li><NavLink to='/myOrders'>My Orders</NavLink></li>
+                            <li>
+                                <button onClick={handleSignOut}
+                                    className="btn btn-sm btn-outline mx-2">Logout</button>
+                            </li>
                         </ul>
                     </div>
                         : null

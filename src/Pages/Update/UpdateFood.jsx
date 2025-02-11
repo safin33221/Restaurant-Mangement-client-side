@@ -80,7 +80,7 @@ const UpdateFood = () => {
                             name="foodImage"
                             required
                             defaultValue={food.foodImage}
-                            className={` border border-gray-300 p-3  rounded-full flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
+                            className={` file-input file-input-bordered  border-gray-300 rounded-full flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 

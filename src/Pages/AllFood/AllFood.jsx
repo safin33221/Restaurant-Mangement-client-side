@@ -6,12 +6,12 @@ import { Helmet } from 'react-helmet-async';
 import Loading from '../../Components/Loading';
 
 const AllFood = () => {
-    
+
     const { darktheme } = useContext(authContext)
     const [foods, setFoods] = useState([])
     const [search, setSearch] = useState('')
     const [sort, setSort] = useState('')
-    const [loading,setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         axios.get(`http://localhost:8080/foods?search=${search}&sort=${sort}`)
@@ -19,8 +19,8 @@ const AllFood = () => {
                 setFoods(res.data)
                 setLoading(false)
             })
-    }, [search,sort])
-    if(loading) return <Loading/>
+    }, [search, sort])
+    if (loading) return <Loading />
     return (
         <div>
             <Helmet><title>Master Chef || All Foods</title></Helmet>
@@ -36,19 +36,21 @@ const AllFood = () => {
             {/* food Card section */}
             <div>
                 <h1 className='text-center font-bold text-3xl   w-fit mx-auto'>Our Food items_</h1>
-                <div className="join flex items-center justify-center mt-5 ">
-                    <input onChange={(e) => setSearch(e.target.value)} className={`input input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
-                    <button className="btn  rounded-r-full">Search</button>
+                <div className="join flex flex-col-reverse gap-4 md:flex-row items-center justify-center mt-5 px-5 mx-auto">
+                    <div className='flex'>
+                        <input onChange={(e) => setSearch(e.target.value)} className={`input input-sm input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
+                        <button className="btn btn-sm  rounded-r-full">Search</button>
+                    </div>
                     <div className="felx mx-2" >
-                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5  rounded-xl  p-3" name="" id="">
-                          
+                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5 select-sm rounded-xl  " name="" id="">
+
                             <option value="ascending">Ascending</option>
                             <option value="dscending">Dscending</option>
                         </select>
-                        
+
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 mx-auto my-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-4 w-11/12 mx-auto my-10'>
                     {
                         foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                     }

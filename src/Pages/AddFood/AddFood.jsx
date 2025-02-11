@@ -68,14 +68,14 @@ const AddFood = () => {
                     </div>
 
                     <div className="col-span-12 md:col-span-6 flex flex-col ">
-                        <label className="text-lg ">Food Image URL</label>
+                        <label className="text-lg ">Food Image </label>
                         <input
                             type="file"
                             draggable
                             name="foodImage"
                             required
 
-                            className={` border border-gray-300 p-2 rounded-full  flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
+                            className={`  border-gray-300 file-input file-input-bordered rounded-full  flex items-center focus:ring-1 focus:ring-green-200 gap-2 `}
                         />
                     </div>
 

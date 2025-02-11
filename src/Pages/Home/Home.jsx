@@ -4,6 +4,7 @@ import TopFoods from './TopFoods';
 import OurBranch from './OurBranch';
 import CustomerTestimonials from './CustomerTestimonials';
 import { Helmet } from 'react-helmet-async';
+import Offer from './Offer';
 
 const Home = () => {
     return (
@@ -12,6 +13,8 @@ const Home = () => {
             <Banner />
 
             <TopFoods/>
+
+            <Offer/>
 
             <OurBranch/>
 
