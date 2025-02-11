@@ -21,6 +21,7 @@ const Login = () => {
         const form = e.target
         const email = form.email.value
         const password = form.password.value
+
         if (email, password) {
             signInWithEmailAndPass(email, password)
                 .then(res => {
@@ -52,6 +53,19 @@ const Login = () => {
                         })
                     }
                 })
+        }
+        else {
+            setLoading(false)
+            return toast.error("🚨 Oops! Please fill out all the  fields to continue.", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+
+            })
         }
     }
     const handleLoginWithGoogle = () => {

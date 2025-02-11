@@ -14,7 +14,7 @@ const AllFood = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/foods?search=${search}&sort=${sort}`)
+        axios.get(`https://restaurant-management-server-side-wheat.vercel.app/foods?search=${search}&sort=${sort}`)
             .then(res => {
                 setFoods(res.data)
                 setLoading(false)

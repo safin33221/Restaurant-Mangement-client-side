@@ -16,6 +16,7 @@ import AddFood from '../Pages/AddFood/AddFood';
 import PrivetRoute from '../PrivetRoutes/PrivetRoute';
 import MyProfile from '../Pages/MyProfile/MyProfile';
 import Error from '../Pages/Error';
+import FeedBack from '../Pages/Feedback/FeedBack';
 
 
 const router = createBrowserRouter([
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
             {
                 path: '/myOrders',
                 element: <PrivetRoute><MyOrders /></PrivetRoute>
+            },
+            {
+                path: '/feedback',
+                element: <PrivetRoute><FeedBack /></PrivetRoute>
             },
         ]
     }

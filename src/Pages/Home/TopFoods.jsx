@@ -10,7 +10,7 @@ const TopFoods = () => {
     const [foods, setFoods] = useState([])
     const [loading,setLoading] = useState(true)
     useEffect(() => {
-        axios.get('http://localhost:8080/top-foods')
+        axios.get('https://restaurant-management-server-side-wheat.vercel.app/top-foods')
             .then(res => {
                 setFoods(res.data)
                 setLoading(false)

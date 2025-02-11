@@ -117,6 +117,7 @@ const Navbar = () => {
                             <li><NavLink to='/myFoods'>My Foods</NavLink></li>
                             <li><NavLink to='/addFood'>Add food</NavLink></li>
                             <li><NavLink to='/myOrders'>My Orders</NavLink></li>
+                            <li><NavLink to='/feedback'>Send Feedback</NavLink></li>
                             <li>
                                 <button onClick={handleSignOut}
                                     className="btn btn-sm btn-outline mx-2 my-2">Logout</button>
