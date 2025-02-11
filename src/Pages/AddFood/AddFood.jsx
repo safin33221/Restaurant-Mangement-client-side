@@ -22,6 +22,7 @@ const AddFood = () => {
 
         const formData = Object.fromEntries(data.entries())
         formData.quantity = parseInt(formData.quantity)
+        formData.price = parseInt(formData.price)
         formData.Purchase_count = 0;
         const image = await imageUpload(formData.foodImage)
         formData.foodImage = image
@@ -52,7 +53,7 @@ const AddFood = () => {
 
             <Helmet><title>Master Chef || Add Food</title></Helmet>
             <form onSubmit={handleSubmit} className={` w-11/12 md:w-8/12 mx-auto border shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10    ${darktheme && "bg-gray-800 border border-gray-900 "}`}>
-                <h2 className="text-2xl font-semibold text-center text-green-500">Add Food Item</h2>
+                <h2 className="text-3xl font-bold mx-auto text-center">Add Food Item</h2>
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12 md:col-span-6 flex flex-col">

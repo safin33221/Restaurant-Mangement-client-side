@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import moment from "moment";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 
 const FoodPurchase = () => {
@@ -113,10 +114,13 @@ const FoodPurchase = () => {
     }
 
     return (
-        <div>
+        <div className="pt-24">
             <Helmet><title>Master Chef || Food Parchase</title></Helmet>
-            <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3  shadow-lg rounded-lg space-y-4 py-7 my-3 border-2">
-                <h2 className="text-2xl font-semibold text-center text-green-500">Food Purchase</h2>
+            <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3  shadow-lg rounded-lg space-y-4 py-7 my-3 border">
+                <h2 className="text-2xl font-bold text-center ">Food Purchase</h2>
+                <Link to={`/food/${id}`} data-tip="Go Back">
+                    <FaArrowAltCircleLeft className="text-4xl" />
+                </Link>
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12  flex flex-col">
@@ -194,7 +198,7 @@ const FoodPurchase = () => {
                 <button
                     type="submit"
                     disabled={isDisabled}
-                    className="btn btn-outline  w-full block bg-green-400 hover:bg-green-500  hover:text-black text-xl"
+                    className="btn btn-outline  px-20  hover:bg-gray-100 hover:text-black  text-xl"
                 >
                     Purchase
                 </button>

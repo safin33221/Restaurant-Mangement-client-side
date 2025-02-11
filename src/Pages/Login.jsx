@@ -6,37 +6,26 @@ import loginAnimation from '../assets/Lottie/login.json'
 import Lottie from 'lottie-react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
+import { ImSpinner9 } from 'react-icons/im';
 
 
 const Login = () => {
-    const { signInWithEmailAndPass, signInWithGoogle,theme } = useContext(authContext)
+    const { signInWithEmailAndPass, signInWithGoogle, theme } = useContext(authContext)
     const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
 
     const handleLogin = (e) => {
         e.preventDefault()
+        setLoading(true)
         const form = e.target
         const email = form.email.value
         const password = form.password.value
-        signInWithEmailAndPass(email, password)
-            .then(res => {
-
-                toast.success(' Welcome back! Login successful.', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    theme: "light",
-
-                })
-                navigate('/')
-            })
-            .catch(error => {
-
-                if (error.code === "auth/invalid-credential") {
-                    return toast.error('Oops! The email or password you entered is incorrect. Please try again.', {
+        if (email, password) {
+            signInWithEmailAndPass(email, password)
+                .then(res => {
+                    setLoading(false)
+                    toast.success(' Welcome back! Login successful.', {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -46,8 +35,24 @@ const Login = () => {
                         theme: "light",
 
                     })
-                }
-            })
+                    navigate('/')
+                })
+                .catch(error => {
+                    setLoading(false)
+                    if (error.code === "auth/invalid-credential") {
+                        return toast.error('Oops! The email or password you entered is incorrect. Please try again.', {
+                            position: "top-right",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: false,
+                            pauseOnHover: true,
+                            draggable: true,
+                            theme: "light",
+
+                        })
+                    }
+                })
+        }
     }
     const handleLoginWithGoogle = () => {
         signInWithGoogle()
@@ -113,11 +118,15 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-3">
-                            <button className={`btn ${theme === 'light' && 'bg-green-400 hover:bg-green-500'}`}>Login</button>
+                            <button className={`btn ${theme === 'light' && 'bg-green-400 hover:bg-green-500'}`}>
+                                {
+                                    loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Login"
+                                }
+                            </button>
                         </div>
                         <div className="form-control">
                             <label >
-                                <button type='submit' onClick={handleLoginWithGoogle} className="btn w-full ">Login With Google</button>
+                                <button type='button' onClick={handleLoginWithGoogle} className="btn w-full ">Login With Google</button>
                             </label>
                         </div>
                     </form>

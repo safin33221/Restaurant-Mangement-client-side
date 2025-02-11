@@ -3,19 +3,20 @@ import React, { useEffect, useState } from 'react';
 
 import FoodCard from '../../Components/FoodCard';
 import { Link } from 'react-router-dom';
+import Loading from '../../Components/Loading';
 
 const TopFoods = () => {
 
     const [foods, setFoods] = useState([])
-    
+    const [loading,setLoading] = useState(true)
     useEffect(() => {
         axios.get('http://localhost:8080/top-foods')
             .then(res => {
                 setFoods(res.data)
-                
+                setLoading(false)
             })
     }, [])
-
+    if(loading) return <Loading/>
     return (
         <div className='w-11/12 mx-auto my-10'>
             <div>

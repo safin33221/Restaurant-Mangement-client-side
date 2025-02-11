@@ -96,7 +96,7 @@ const Navbar = () => {
                             className="btn btn-xl mx-2">Logout</button>
                         :
                         <Link to='/login'>
-                            <button className="btn  mx-2">Login</button>
+                            <button className="btn  mx-2">Get Start</button>
                         </Link>
                 }
                 {

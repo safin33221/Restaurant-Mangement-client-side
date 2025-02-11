@@ -32,8 +32,9 @@ const UpdateFood = () => {
         formData.quantity = parseInt(formData.quantity)
         const image = await imageUpload(formData.foodImage)
         formData.foodImage = image
+        formData.price = parseInt(formData.price)
      
-
+        console.log(formData);
 
 
         axiosSecure.put(`/foods/${id}`, formData)
@@ -57,7 +58,7 @@ const UpdateFood = () => {
         <div>
             <Helmet><title>Master Chef || Update Food</title></Helmet>
             <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10 `}>
-                <h2 className="text-2xl font-semibold text-center text-green-500">Update Foods</h2>
+                <h2 className="text-3xl font-bold mx-auto text-center">Update Foods</h2>
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12 md:col-span-6 flex flex-col">
@@ -79,7 +80,7 @@ const UpdateFood = () => {
                             name="foodImage"
                             required
                             defaultValue={food.foodImage}
-                            className={` border border-gray-300 p-3 rounded-lg flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
+                            className={` border border-gray-300 p-3  rounded-full flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
 
@@ -113,8 +114,7 @@ const UpdateFood = () => {
                             name="price"
                             required
                             defaultValue={food.price}
-                            step="0.01"
-                            min="0"
+                            
                             className={`input input-bordered  focus:outline-none flex items-center focus:ring-1 focus:ring-green-200 gap-2 ${darktheme && "bg-gray-700"}`}
                         />
                     </div>
@@ -166,7 +166,7 @@ const UpdateFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn   w-full block font-bold  text-xl"
+                    className=" btn px-16 btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out"
                 >
                     {
                         loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Update"

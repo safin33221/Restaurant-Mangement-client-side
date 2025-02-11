@@ -4,16 +4,19 @@ import { authContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet-async';
+import Loading from '../../Components/Loading';
 
 
 const MyOrders = () => {
     const { user } = useContext(authContext)
     const [myFoods, setFoods] = useState([])
     const axiosSecure = useAxiosSecure()
+    const [loading,setLoading] = useState(true)
     useEffect(() => {
         axiosSecure.get(`/parchases-food/${user?.email}`)
             .then(res => {
                 setFoods(res.data);
+                setLoading(false)
             })
     }, [user?.email])
     const handleDelete = id => {
@@ -44,6 +47,7 @@ const MyOrders = () => {
         });
 
     }
+    if (loading) return <Loading/>
     return (
         <div className='min-h-[300px] mt-24'>
             <Helmet><title>Master Chef || My Orders</title></Helmet>
