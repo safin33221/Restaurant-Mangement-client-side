@@ -34,7 +34,7 @@ const FoodDetails = () => {
 
                 <div className=" flex gap-2  ">
 
-                    <span className="text-lg ">Price: ${food.price} </span>
+                    <span className="text-lg ">Price: {food.price} Tk </span>
                     <span className="text-gray-500 mx-2">||</span>
                     <span className="text-lg ">Quantity: {food.quantity}</span>
                 </div>
