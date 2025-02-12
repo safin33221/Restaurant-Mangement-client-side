@@ -33,12 +33,12 @@ const FeedBack = () => {
                     theme: "light",
 
                 })
-                console.log(res.data);
+                
             })
 
     }
     return (
-        <div className="max-w-lg mx-auto  p-6 shadow-lg  rounded-lg mt-48 mb-4">
+        <div className="max-w-lg mx-auto  p-6 shadow-lg  rounded-xl mt-48 mb-4 px-10 ">
             <h2 className="text-2xl font-bold text-center mb-4">
                 Your Feedback Matters! ⭐
             </h2>
@@ -48,7 +48,7 @@ const FeedBack = () => {
 
                 {/* Feedback Text Area */}
                 <textarea
-                    className="w-full p-3 border rounded-lg focus:outline-none "
+                    className="w-full p-3 border rounded-xl focus:outline-none "
                     rows="4"
                     placeholder="Write your feedback here..."
                     name='message'
@@ -60,7 +60,7 @@ const FeedBack = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className={`w-full mt-4 p-3 btn btn-outline hover:bg-gray-100 hover:text-black   font-bold rounded-lg transition `}
+                    className={`w-full mt-4 p-3 btn btn-outline hover:bg-gray-100 hover:text-black   font-bold rounded-xl transition `}
                    
                 >
                     {loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Submit Feedback"}

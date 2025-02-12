@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaUserAlt } from "react-icons/fa";
 import logo from '../../assets/logo/titleLogo.png'
 
 
@@ -101,7 +101,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img
-                                    alt={FaUser}
+                                    alt="loaing"
                                     src={user?.photoURL} />
                             </div>
                         </div>

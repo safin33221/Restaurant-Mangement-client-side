@@ -26,7 +26,7 @@ const Register = () => {
 
 
 
-        console.log(formData);
+
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!formData.name || !formData.photo || !formData.email || !formData.password) {
             setLoading(false)
@@ -57,7 +57,7 @@ const Register = () => {
         formData.quantity = parseInt(formData.quantity)
         const image = await imageUpload(formData.photo)
         formData.photo = image
-        console.log(formData);
+
 
         // const image = await imageUpload(photo.files[0])
 

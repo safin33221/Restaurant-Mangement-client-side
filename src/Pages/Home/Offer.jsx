@@ -25,7 +25,7 @@ const Offer = () => {
 
                 <div className="container mx-auto  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {promotions.map((promo, index) => (
-                        <div className=" rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl border">
+                        <div key={index} className=" rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl border">
                             <div className="p-5 relative min-h-60">
                                 <h3 className="text-xl font-bold ">{promo.title}</h3>
                                 <p className="">{promo.details}</p>

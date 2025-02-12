@@ -8,7 +8,7 @@ const MyProfile = () => {
         <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-20 px-3 min-h-96 ">
             <Helmet><title>Master Chef || Profile</title></Helmet>
   
-            <div className="w-full max-w-md shadow-lg p-5 rounded-lg relative border shadow-2xl  ">
+            <div className="w-full max-w-md  p-5 rounded-xl relative border shadow-2xl  ">
                 
                 <h1 className="text-2xl font-bold text-center mb-5">Your Profile</h1>
 

@@ -19,7 +19,7 @@ const CustomerTestimonials = () => {
                 setFeedback(res.data)
             })
     }, [])
-    console.log(feedback);
+
 
     return (
         <div className=' mx-auto py-8'>
@@ -57,7 +57,7 @@ const CustomerTestimonials = () => {
                     feedback?.map(item => <SwiperSlide key={item._id}>
                         <div
 
-                            className={`max-w-96 border min-h-52  p-6 rounded-lg shadow-md transition-transform transform  `}
+                            className={`max-w-96 mx-auto border min-h-52  p-6 rounded-xl shadow-md transition-transform transform  `}
                         >
 
                             <p className={`italic  text-center`}>"{item.message}"</p>

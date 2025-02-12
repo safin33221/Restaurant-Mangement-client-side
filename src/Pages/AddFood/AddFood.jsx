@@ -14,7 +14,7 @@ import { ImSpinner9 } from 'react-icons/im';
 const AddFood = () => {
     const { user, darktheme } = useContext(authContext)
     const axiosSecure = useAxiosSecure()
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const handleSubmit = async e => {
         e.preventDefault()
         setLoading(true)
@@ -152,8 +152,8 @@ const AddFood = () => {
                                 value={user?.email}
                                 readOnly
                                 className={`input input-bordered focus:ring-1 focus:ring-green-200   focus:outline-none flex md:w-1/2 items-center gap-2 ${darktheme && "bg-gray-700"}`}
-                                p
-                            // className="p-3 border  bg-transparent rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-green-100"
+
+
                             />
                         </div>
                     </div>

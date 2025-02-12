@@ -33,8 +33,7 @@ const UpdateFood = () => {
         const image = await imageUpload(formData.foodImage)
         formData.foodImage = image
         formData.price = parseInt(formData.price)
-     
-        console.log(formData);
+
 
 
         axiosSecure.put(`/foods/${id}`, formData)
@@ -57,7 +56,7 @@ const UpdateFood = () => {
     return (
         <div>
             <Helmet><title>Master Chef || Update Food</title></Helmet>
-            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border md:w-8/12 mx-auto shadow-2xl rounded-lg space-y-4 py-7 p-5  my-10 `}>
+            <form onSubmit={(e) => handleUpdate(e, food._id)} className={` w-11/12 mt-24 border md:w-8/12 mx-auto shadow-2xl rounded-xl space-y-4 py-7 p-5  my-10 `}>
                 <h2 className="text-3xl font-bold mx-auto text-center">Update Foods</h2>
 
                 <div className="grid grid-cols-12 gap-4">

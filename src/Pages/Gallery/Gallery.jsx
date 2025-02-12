@@ -46,9 +46,9 @@ const Gallery = () => {
     return (
 
 
-        <div className="" >
+        <div className="mt-16" >
             <Helmet><title>Master Chef || Gallery</title></Helmet>
-            <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:h-[450px]  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
+            <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:h-[400px]  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
 
                 <div className=' text-center w-4/5 md:w-1/2 '>
                     <h1 className='text-[#ffc700] font-bold text-3xl'>Our Food Gallery</h1>

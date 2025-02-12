@@ -15,7 +15,7 @@ const FoodCard = ({ food }) => {
             />
             <div className="p-4 ">
                 <h3 className="text-lg font-bold ">{food.foodName}</h3>
-                <p className="text-sm  mt-1">{food.description.slice(0, 50)}</p>
+                <p className="text-sm  mt-1">{food.description.slice(0, 50)}...</p>
                 {/* <p className="mt-3 text-sm text-gray-700">{food.description}</p> */}
 
                 <div className="mt-2 flex items-center justify-between ">

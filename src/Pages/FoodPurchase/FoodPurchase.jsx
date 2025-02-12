@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { ImSpinner9 } from "react-icons/im";
 
 
 const FoodPurchase = () => {
@@ -16,6 +17,7 @@ const FoodPurchase = () => {
     const navigate = useNavigate()
     const [isDisabled, setIsDisabled] = useState(false)
     const axiosSecure = useAxiosSecure()
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         axiosSecure.get(`/food/${id}`)
             .then(res => {
@@ -27,6 +29,7 @@ const FoodPurchase = () => {
 
     const handleParchase = e => {
         e.preventDefault()
+        setLoading(true)
         const formData = new FormData(e.target)
         const parchaseData = Object.fromEntries(formData.entries())
         parchaseData.quantity = parseInt(parchaseData.quantity)
@@ -50,7 +53,7 @@ const FoodPurchase = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
             return;
         }
@@ -65,7 +68,7 @@ const FoodPurchase = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
         }
         if (parchaseData.quantity === false) {
@@ -77,7 +80,7 @@ const FoodPurchase = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
         }
         if (parchaseData.quantity > food.quantity) {
@@ -89,7 +92,7 @@ const FoodPurchase = () => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light",
-               
+
             })
         }
 
@@ -97,7 +100,7 @@ const FoodPurchase = () => {
 
         axiosSecure.post('/food-parchase', parchaseData)
             .then(res => {
-                
+                setLoading(false)
                 toast.success('Purchase successful! We’ll get your items ready soon.', {
                     position: "top-right",
                     autoClose: 2000,
@@ -106,7 +109,7 @@ const FoodPurchase = () => {
                     pauseOnHover: true,
                     draggable: true,
                     theme: "light",
-                   
+
                 })
                 navigate('/myOrders')
             })
@@ -116,7 +119,7 @@ const FoodPurchase = () => {
     return (
         <div className="pt-24">
             <Helmet><title>Master Chef || Food Parchase</title></Helmet>
-            <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3  shadow-lg rounded-lg space-y-4 py-7 my-3 border">
+            <form onSubmit={handleParchase} className=" w-11/12 md:w-6/12 mx-auto p-3  shadow-lg rounded-xl space-y-4 py-7 my-3 border">
                 <h2 className="text-2xl font-bold text-center ">Food Purchase</h2>
                 <Link to={`/food/${id}`} data-tip="Go Back">
                     <FaArrowAltCircleLeft className="text-4xl" />
@@ -131,7 +134,7 @@ const FoodPurchase = () => {
                             value={food.foodName}
                             readOnly
                             required
-                            className="p-3 border bg-transparent  rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200"
+                            className="p-3 border bg-transparent  rounded-xl focus:outline-none focus:ring-2 focus:ring-green-200"
                         />
                     </div>
 
@@ -143,7 +146,7 @@ const FoodPurchase = () => {
                             value={food.price}
                             readOnly
 
-                            className="p-3 border bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200"
+                            className="p-3 border bg-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-green-200"
                         />
                     </div>
 
@@ -157,7 +160,7 @@ const FoodPurchase = () => {
                             required
 
 
-                            className="p-3 border bg-transparent rounded-lg focus:outline-none  focus:ring-2 focus:ring-green-200"
+                            className="p-3 border bg-transparent rounded-xl focus:outline-none  focus:ring-2 focus:ring-green-200"
                         />
                     </div>
 
@@ -174,7 +177,7 @@ const FoodPurchase = () => {
                                 name='name'
                                 value={user?.displayName || 'not found'}
                                 readOnly
-                                className="p-3 border bg-transparent rounded-lg focus:outline-none w-full focus:ring-2 focus:ring-green-200"
+                                className="p-3 border bg-transparent rounded-xl focus:outline-none w-full focus:ring-2 focus:ring-green-200"
                             />
                         </div>
                     </div>
@@ -187,7 +190,7 @@ const FoodPurchase = () => {
                                 name='email'
                                 value={user?.email}
                                 readOnly
-                                className="p-3 border bg-transparent rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-green-200"
+                                className="p-3 border bg-transparent rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-green-200"
                             />
                         </div>
                     </div>
@@ -200,7 +203,10 @@ const FoodPurchase = () => {
                     disabled={isDisabled}
                     className="btn btn-outline  px-20  hover:bg-gray-100 hover:text-black  text-xl"
                 >
-                    Purchase
+                    {
+                        loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Purchase"
+                    }
+
                 </button>
             </form>
         </div>

@@ -5,7 +5,7 @@ const Error = () => {
     const navigate = useNavigate()
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center">
-            <div className="max-w-2xl p-6 bg-white rounded-2xl shadow-lg">
+            <div className="max-w-2xl p-6 bg-white rounded-xl shadow-lg">
                
                 <h1 className="text-6xl font-bold text-[#E63946]">404</h1>
                 <h2 className="text-2xl font-semibold mt-4 text-gray-800">

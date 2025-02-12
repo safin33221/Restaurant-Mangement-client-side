@@ -22,9 +22,9 @@ const AllFood = () => {
     }, [search, sort])
     if (loading) return <Loading />
     return (
-        <div>
+        <div className='mt-16'>
             <Helmet><title>Master Chef || All Foods</title></Helmet>
-            <div className="bg-[url('/src/assets/AllFoodBanner.png')] h-3/5    md:h-[450px] object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center  overflow-hidden">
+            <div className="bg-[url('/src/assets/AllFoodBanner.png')] h-3/5    md:h-[400px] object-center  mx-auto bg-cover object-contain mb-2 flex justify-center items-center  overflow-hidden">
 
                 <div className=' text-center w-4/5 md:w-1/2'>
                     <h1 className='text-[#ffc700] font-bold text-3xl'>All Foods</h1>
