@@ -127,9 +127,7 @@ const Login = () => {
                             <button type='button' className='absolute right-3 top-4' onClick={() => setShowPass(!showPass)}>{showPass ? <FaEye /> : <FaEyeSlash></FaEyeSlash>}</button>
                         </div>
 
-                        <div className="form-control">
-                            <p className='text-blue-600 underline'>Forget Password?</p>
-                        </div>
+                       
 
                         <div className="form-control mt-3">
                             <button className={`btn ${theme === 'light' && 'bg-green-400 hover:bg-green-500'}`}>

@@ -5,7 +5,7 @@ Restaurant Management System is a web application designed to streamline restaur
 
 ## Screenshot
 <div align="center">
-  <img height="300" src="https://i.ibb.co.com/qLk8f3T0/restaurant-management-caeb2-web-app.png"  />
+  <img height="300" src="https://i.ibb.co.com/391qk53t/restaurant-management-caeb2-web-app-2.png"  />
   
   
 </div>
