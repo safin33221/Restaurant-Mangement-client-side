@@ -7,7 +7,7 @@ const MyProfile = () => {
     const { user } = useContext(authContext)
     const [isEdit, setIsEdit] = useState(false)
     const [isPhotoEdit, setIsPhotoEdit] = useState(false)
-    const [name, setName] = useState(user?.displayName)
+    const [name, setName] = useState(null)
     const [photo, setPhoto] = useState(null)
     const [selectedPhoto, setSelectedPhoto] = useState(null)
 
@@ -77,21 +77,47 @@ const MyProfile = () => {
                     <div className='relative w-64'>
                         {
                             isEdit ? (
-                                <div className='border-b-2 w-fit'>
+                                <div className='border-b-2 border-black w-fit '>
                                     <input
                                         type="text"
                                         className='focus:border-none focus:outline-none w-64  text-3xl font-bold mt-3'
-                                        defaultValue={name}
+                                        defaultValue={user?.displayName}
+                                        onChange={(e) => setName(e.target.value)}
                                     />
+
                                 </div>
                             ) : (
                                 <h2 className="text-3xl font-bold mt-3">{user?.displayName}</h2>
                             )
                         }
                         <p className="text-gray-500">{user?.email}</p>
-                        <div onClick={() => setIsEdit(!isEdit)}
-                            className='absolute top-4 -right-14 '>
-                            <button className="  text-3xl font-bold"><FaEdit /></button>
+                        <div className='flex'>
+                            {
+                                isEdit ? (
+
+
+
+                                    (
+                                        <div className='flex absolute top-24 -right-16 '>
+                                            <button
+                                                onClick={() => {
+                                                    setName(null)
+                                                    setIsEdit(false)
+                                                }
+                                                }
+                                                className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Cancel</button>
+                                            <button className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
+                                        </div>)
+
+
+
+
+                                ) :
+                                    (<div onClick={() => setIsEdit(!isEdit)}
+                                        className='absolute top-4 -right-10'>
+                                        <button className="  text-3xl font-bold"><FaEdit /></button>
+                                    </div>)
+                            }
                         </div>
                     </div>
                 </div>
