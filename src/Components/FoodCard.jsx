@@ -29,7 +29,7 @@ const FoodCard = ({ food }) => {
 
             </div>
             <Link to={`/food/${food._id}`} className='absolute bottom-2 w-full px-4'>
-                <button className=" mt-5 w-full btn btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out">
+                <button className=" mt-5 w-full btn btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out ">
                     See more
                 </button>
             </Link>

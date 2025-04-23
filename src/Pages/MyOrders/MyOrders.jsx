@@ -49,7 +49,7 @@ const MyOrders = () => {
     }
     if (loading) return <Loading/>
     return (
-        <div className='min-h-[300px] mt-24'>
+        <div className='min-h-screen mt-24'>
             <Helmet><title>Master Chef || My Orders</title></Helmet>
             {
                 myFoods.length === 0 ?
