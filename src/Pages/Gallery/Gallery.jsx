@@ -46,7 +46,7 @@ const Gallery = () => {
     return (
 
 
-        <div className="mt-16" >
+        <div className="" >
             <Helmet><title>Master Chef || Gallery</title></Helmet>
             <div className="bg-[url('/src/assets/FoodGalley/banner.png')] h-1/2  md:h-[400px]  mx-auto bg-cover object-contain mb-2 flex justify-center items-center object-center overflow-hidden">
 

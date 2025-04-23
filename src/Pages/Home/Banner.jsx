@@ -22,7 +22,7 @@ const Banner = () => {
         <div className=''>
 
             <Swiper
-                className=' md:h-[600px] object-cover w-full   '
+                className=' md:h-[500px] object-cover w-full   '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -40,7 +40,7 @@ const Banner = () => {
 
             >
                 {
-                    slides.map((slid, idx) => < SwiperSlide key={idx}><img src={slid} alt={'Loading'} className='w-full md:h-[600px]  md:bg-contain' /></SwiperSlide>)
+                    slides.map((slid, idx) => < SwiperSlide key={idx}><img src={slid} alt={'Loading'} className='w-full md:h-[500px]  md:bg-contain' /></SwiperSlide>)
                 }
 
 
