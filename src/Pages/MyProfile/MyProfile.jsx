@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { authContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet';
 import { FaCamera, FaEdit } from 'react-icons/fa';
-
+import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify'
+import { imageUpload } from '../../Api/Utils/imageHost';
 const MyProfile = () => {
     const { user } = useContext(authContext)
     const [isEdit, setIsEdit] = useState(false)
@@ -24,6 +26,17 @@ const MyProfile = () => {
         }
 
 
+    }
+    const handleChangeName = async () => {
+        await updateProfile(user, { displayName: name, photoURL: user?.photoURL })
+        toast.success('Updated Name !!')
+        setIsEdit(!isEdit)
+    }
+    const handleChangePhoto = async () => {
+        const photoUrl = await imageUpload(photo) 
+        await updateProfile(user, { displayName: user?.displayName, photoURL: photoUrl })
+        setSelectedPhoto(null)
+        toast.success('Updated Photo !!')
     }
     return (
         <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-20 px-3 min-h-96 relative  ">
@@ -62,7 +75,9 @@ const MyProfile = () => {
                                         <button
                                             onClick={() => setSelectedPhoto(null)}
                                             className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Cancel</button>
-                                        <button className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
+                                        <button 
+                                        onClick={handleChangePhoto}
+                                        className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
                                     </div>
                                 )
                             }
@@ -106,7 +121,9 @@ const MyProfile = () => {
                                                 }
                                                 }
                                                 className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Cancel</button>
-                                            <button className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
+                                            <button
+                                                onClick={handleChangeName}
+                                                className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
                                         </div>)
 
 
