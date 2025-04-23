@@ -8,11 +8,11 @@ const MyProfile = () => {
     const [isEdit, setIsEdit] = useState(false)
     const [isPhotoEdit, setIsPhotoEdit] = useState(false)
     const [name, setName] = useState(user?.displayName)
-    const [photo, setPhoto] = useState(user?.photoURL)
-    const [selectedPhoto, setSelectedPhoto] = useState('')
+    const [photo, setPhoto] = useState(null)
+    const [selectedPhoto, setSelectedPhoto] = useState(null)
 
     const handlePhotoChange = (e) => {
-        const file =  (e.target.files[0])
+        const file = (e.target.files[0])
         console.log(file);
         if (file) {
             const reader = new FileReader()
@@ -22,12 +22,14 @@ const MyProfile = () => {
             reader.readAsDataURL(file)
             setPhoto(file)
         }
+
+
     }
     return (
         <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-20 px-3 min-h-96 relative  ">
             <Helmet><title>Master Chef || Profile</title></Helmet>
 
-            <div className=" md:w-11/12 mx-auto  p-5 rounded-xl relative border shadow-2xl flex items-center justify-center  ">
+            <div className=" md:w-11/12 mx-auto  p-5 rounded-xl  border shadow-2xl flex items-center justify-center  ">
 
                 {/* <h1 className="text-2xl font-bold text-center mb-5">Your Profile</h1> */}
 
@@ -38,7 +40,7 @@ const MyProfile = () => {
 
                             <div className='relative'>
                                 <img
-                                    src={selectedPhoto || photo}
+                                    src={selectedPhoto || user?.photoURL}
                                     alt="User Avatar"
                                     className="w-64 h-64 rounded-full border "
 
@@ -54,6 +56,16 @@ const MyProfile = () => {
                                     onClick={() => document.getElementById('fileInput').click()}
                                     className='absolute bottom-5 right-3 backdrop-blur-sm hover:backdrop-blur-md border p-2 rounded-full text-5xl' />
                             </div>
+                            {
+                                selectedPhoto && (
+                                    <div className='mt-10'>
+                                        <button
+                                            onClick={() => setSelectedPhoto(null)}
+                                            className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Cancel</button>
+                                        <button className='btn gap-3 rounded-none border-2 bg-gray-300 w-44'>Save</button>
+                                    </div>
+                                )
+                            }
 
 
                         </div>
@@ -62,13 +74,13 @@ const MyProfile = () => {
                             No Photo
                         </div>
                     )}
-                    <div>
+                    <div className='relative w-64'>
                         {
                             isEdit ? (
                                 <div className='border-b-2 w-fit'>
                                     <input
                                         type="text"
-                                        className='  text-3xl font-bold mt-3'
+                                        className='focus:border-none focus:outline-none w-64  text-3xl font-bold mt-3'
                                         defaultValue={name}
                                     />
                                 </div>
@@ -77,10 +89,10 @@ const MyProfile = () => {
                             )
                         }
                         <p className="text-gray-500">{user?.email}</p>
-                    </div>
-                    <div onClick={() => setIsEdit(!isEdit)}
-                        className='absolute top-4 right-5 '>
-                        <button className="  text-3xl font-bold"><FaEdit /></button>
+                        <div onClick={() => setIsEdit(!isEdit)}
+                            className='absolute top-4 -right-14 '>
+                            <button className="  text-3xl font-bold"><FaEdit /></button>
+                        </div>
                     </div>
                 </div>
 
