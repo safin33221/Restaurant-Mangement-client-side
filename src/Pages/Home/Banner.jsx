@@ -22,7 +22,7 @@ const Banner = () => {
         <div className=''>
 
             <Swiper
-                className=' md:h-[400px] object-cover w-full mt-16  '
+                className=' md:h-[500px] object-cover w-full   '
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -36,13 +36,14 @@ const Banner = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
+                style={{zIndex:'0'}}
 
             >
                 {
-                    slides.map((slid,idx)=>< SwiperSlide key={idx}><img src={slid} alt={'Loading'} className='w-full md:h-[400px]  md:bg-contain' /></SwiperSlide>)
+                    slides.map((slid, idx) => < SwiperSlide key={idx}><img src={slid} alt={'Loading'} className='w-full md:h-[500px]  md:bg-contain' /></SwiperSlide>)
                 }
-                
-                
+
+
 
                 {/* <div className=" absolute md:w-1/2  top-12 md:top-24 right-16 md:right-52 bg-black opacity-80 p-5 rounded-lg text-white  z-50 flex flex-col items-center justify-center text-center">
                     <h1 className='font-bold text-xs py-3 md:text-2xl'>

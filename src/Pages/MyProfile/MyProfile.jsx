@@ -42,11 +42,11 @@ const MyProfile = () => {
         <div className="flex flex-col items-center justify-center my-4 md:my-20 mt-20 px-3 min-h-96 relative  ">
             <Helmet><title>Master Chef || Profile</title></Helmet>
 
-            <div className=" md:w-11/12 mx-auto  p-5 rounded-xl  border shadow-2xl flex items-center justify-center  ">
+            <div className=" w-full px-20 md:w-7/12 mx-auto  p-5 rounded-xl  border shadow-2xl flex items-center justify-center  ">
 
                 {/* <h1 className="text-2xl font-bold text-center mb-5">Your Profile</h1> */}
 
-                <div className="flex gap-10 justify-center w-full   items-center mb-5 ">
+                <div className="md:flex  gap-10 justify-center w-full   items-center mb-5 ">
                     {user ? (
                         <div className=''>
 
@@ -67,7 +67,7 @@ const MyProfile = () => {
                                 />
                                 <FaCamera
                                     onClick={() => document.getElementById('fileInput').click()}
-                                    className='absolute bottom-5 right-3 backdrop-blur-sm hover:backdrop-blur-md border p-2 rounded-full text-5xl' />
+                                    className='absolute bottom-5 md:right-3 right-20 backdrop-blur-sm hover:backdrop-blur-md border p-2 rounded-full text-5xl' />
                             </div>
                             {
                                 selectedPhoto && (

@@ -35,7 +35,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar  bg-base-300 bg-blend-overlay bg-opacity-70 fixed top-0 z-50 backdrop-blur-sm mx-auto  md:px-[45px] flex justify-between">
+        <div className="navbar  bg-base-300 bg-blend-overlay bg-opacity-70 z-50 backdrop-blur-sm mx-auto  md:px-[45px] flex justify-between">
             <div className=" ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden">

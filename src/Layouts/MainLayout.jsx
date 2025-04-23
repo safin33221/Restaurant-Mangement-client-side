@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 import { authContext } from '../Provider/AuthProvider';
+import Headroom from 'react-headroom';
 
 const StyledDiv = styled.div`
     background: ${({ theme }) => theme.background};
@@ -20,10 +21,12 @@ const MainLayout = () => {
 
         <StyledDiv>
             <div >
-                {/* Navbar section */}
-                <nav className={` ${darktheme ? "bg-gray-800 border- border-gray-900" : "bg-base-300"}`}>
-                    <Navbar />
-                </nav>
+                <Headroom>
+
+                    <nav className={` ${darktheme ? "bg-gray-800 border- border-gray-900" : "bg-base-300"}`}>
+                        <Navbar />
+                    </nav>
+                </Headroom>
 
                 {/* Main section  */}
 
