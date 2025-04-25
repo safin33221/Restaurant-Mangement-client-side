@@ -10,7 +10,7 @@ import Loading from '../../Components/Loading';
 const MyOrders = () => {
     const { user } = useContext(authContext)
     const [myFoods, setFoods] = useState([])
-    const axiosSecure = useAxiosSecure()    
+    const axiosSecure = useAxiosSecure()
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         axiosSecure.get(`/parchases-food/${user?.email}`)
@@ -56,7 +56,7 @@ const MyOrders = () => {
             <Helmet><title>Master Chef || My Orders</title></Helmet>
 
             <div className='grid grid-cols-12 gap-5 '>
-                <div className='col-span-7'>
+                <div className=' col-span-12 md:col-span-7'>
                     {
                         myFoods.length === 0 ?
                             <div className='font-bold text-center text-3xl'>
@@ -186,7 +186,7 @@ const MyOrders = () => {
                             </div>
                     }
                 </div>
-                <div className='col-span-5  h-fit mx-auto w-10/12 '>
+                <div className=' col-span-12 md:col-span-5  h-fit mx-auto w-10/12 '>
 
 
                     <table className="table border">
@@ -203,15 +203,17 @@ const MyOrders = () => {
                             </tr>
                             <tr className='border-b  border-gray-500'>
                                 <td>Delivery Charge</td>
-                                <td>40 &</td>
+                                <td>40 $</td>
                             </tr>
-                           
+
                             <tr>
                                 <td>Total</td>
                                 <td> {total_amount + 40}$</td>
                             </tr>
+
                         </tbody>
                     </table>
+                        {/* <button className='btn  w-full rounded-none bg-green-500'>Proceed to Payment</button> */}
 
                 </div>
             </div>
