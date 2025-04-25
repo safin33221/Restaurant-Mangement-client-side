@@ -63,7 +63,7 @@ const AllFood = () => {
 
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-4 w-11/12 mx-auto my-10'>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-5 gap-4 w-11/12 mx-auto my-10'>
                     {
                         foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                     }

@@ -5,13 +5,13 @@ import { authContext } from '../Provider/AuthProvider';
 const FoodCard = ({ food }) => {
     const { darktheme } = useContext(authContext)
     return (
-        <div className={`w-11/12 md:w-full mx-auto border relative  min-h-96   focus:border-green-600  overflow-hidden hover:shadow-2xl  hover:scale-[1.03] transition-all  duration-300  shadow-2xl rounded-xl ${darktheme && 'bg-gray-800'}`}
+        <div className={`w-full md:w-full mx-auto border relative  min-h-96   focus:border-green-600  overflow-hidden hover:shadow-2xl  hover:scale-[1.03] transition-all  duration-300  shadow-2xl rounded-xl ${darktheme && 'bg-gray-800'}`}
 
         >
             <img
                 src={food.foodImage}
                 alt="loading"
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-center bg-center"
             />
             <div className="p-4 ">
                 <h3 className="text-lg font-bold ">{food.foodName}</h3>
@@ -28,7 +28,7 @@ const FoodCard = ({ food }) => {
 
 
             </div>
-            <Link to={`/food/${food._id}`} className='absolute bottom-2 w-full px-4'>
+            <Link to={`/food/${food._id}`} className='absolute bottom-2 w-full px-6 my-2'>
                 <button className=" mt-5 w-full btn btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out ">
                     See more
                 </button>

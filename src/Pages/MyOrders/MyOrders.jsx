@@ -48,7 +48,7 @@ const MyOrders = () => {
 
     }
 
-    const total_amount = myFoods?.reduce((a, b) => a + parseInt(b.price), 0);
+    const total_amount = myFoods?.reduce((a, b) => a + parseInt(b.price * b.quantity), 0);
     console.log(total_amount);
     if (loading) return <Loading />
     return (

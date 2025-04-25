@@ -19,8 +19,8 @@ const MainLayout = () => {
 
     return (
 
-        <StyledDiv>
-            <div className='bg-gray-100'>
+        <StyledDiv  className={` ${darktheme ? "" : "bg-base-100"}`}>
+            <div className=''>
                 <Headroom>
 
                     <nav className={` ${darktheme ? "bg-gray-800 border- border-gray-900" : "bg-base-300"}`}>
