@@ -26,7 +26,7 @@ const CustomerTestimonials = () => {
             <h1 className='text-3xl font-bold text-center  mb-8'> Trusted by Thousands of Happy Customers_</h1>
 
             <Swiper
-                className='w-11/12  mx-auto '
+                className='w-full  mx-auto '
                 spaceBetween={20}
 
                 speed={3000}
@@ -57,7 +57,7 @@ const CustomerTestimonials = () => {
                     feedback?.map(item => <SwiperSlide key={item._id}>
                         <div
 
-                            className={`max-w-96 mx-auto border min-h-52  p-6 rounded-xl shadow-md transition-transform transform  `}
+                            className={`  w-11/12  mx-auto border min-h-52  p-6 rounded-xl shadow-md transition-transform transform  `}
                         >
 
                             <p className={`italic  text-center`}>"{item.message}"</p>

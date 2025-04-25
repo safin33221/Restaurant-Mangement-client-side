@@ -59,7 +59,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <img src={logo} alt="loding" className="w-12 rounded-full " />
-                <a className=" mx-3 font-bold  text-2xl hidden lg:flex">Master Chef</a>
+                <a className=" mx-3 font-bold text-lg  md:text-2xl  ">Master Chef</a>
             </div>
             <div className="flex-none gap-2  ">
                 <div className="menu menu-horizontal px-1 hidden lg:flex items-center ">

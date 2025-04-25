@@ -11,7 +11,7 @@ const FoodCard = ({ food }) => {
             <img
                 src={food.foodImage}
                 alt="loading"
-                className="w-full h-48 object-center bg-center"
+                className="w-full h-48 object-center bg-center border-b drop-shadow-sm"
             />
             <div className="p-4 ">
                 <h3 className="text-sm md:text-lg font-bold ">{food.foodName}</h3>
@@ -29,7 +29,7 @@ const FoodCard = ({ food }) => {
 
             </div>
             <Link to={`/food/${food._id}`} className='absolute  w-full px-6 '>
-                <button className=" mt-2 w-full btn btn-xs md:btn-sm btn-outline hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out ">
+                <button className="  w-full btn btn-xs md:btn-sm  hover:bg-gray-100 hover:text-black   transition duration-400 ease-in-out ">
                     See more
                 </button>
             </Link>

@@ -36,13 +36,13 @@ const AllFood = () => {
             {/* food Card section */}
             <div className=''>
 
-                <div className="join   gap-4 md:flex-row items-center justify-center  w-full mt-5  mx-auto px-16 md:px-20">
+                <div className=" flex   gap-1 md:flex-row items-center justify-center  w-full mt-5  mx-auto px-16 md:px-20">
                     <div className='flex w-full'>
-                        <input onChange={(e) => setSearch(e.target.value)} className={`input w-full input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
-                        <button className="btn  rounded-r-full">Search</button>
+                        <input onChange={(e) => setSearch(e.target.value)} className={`input w-full input-bordered  focus:outline-none flex items-center   ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
+                       
                     </div>  
                     <div onClick={() => setSort(sort === 'ascending' ? 'descending' : 'ascending')}
-                        className="flex mx-2" >
+                        className="flex w-fit    " >
                         <button className="btn bg-gray-300">
                             {
                                 sort === 'ascending' ? (<>
