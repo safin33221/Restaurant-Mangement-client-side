@@ -10,7 +10,7 @@ import Loading from '../../Components/Loading';
 const MyOrders = () => {
     const { user } = useContext(authContext)
     const [myFoods, setFoods] = useState([])
-    const axiosSecure = useAxiosSecure()
+    const axiosSecure = useAxiosSecure()    
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         axiosSecure.get(`/parchases-food/${user?.email}`)
@@ -48,13 +48,14 @@ const MyOrders = () => {
 
     }
 
-    
+    const total_amount = myFoods?.reduce((a, b) => a + parseInt(b.price), 0);
+    console.log(total_amount);
     if (loading) return <Loading />
     return (
-        <div className='min-h-screen mt-10'>
+        <div className='min-h-screen pt-10 bg-gray-100'>
             <Helmet><title>Master Chef || My Orders</title></Helmet>
 
-            <div className='grid grid-cols-12 gap-12 '>
+            <div className='grid grid-cols-12 gap-5 '>
                 <div className='col-span-7'>
                     {
                         myFoods.length === 0 ?
@@ -134,7 +135,7 @@ const MyOrders = () => {
                                                             </td>
 
                                                             <td className='px-4 py-4 text-sm   whitespace-nowrap'>
-                                                                {food.price}
+                                                                {food.price} $
                                                             </td>
                                                             <td className='px-4 py-4 text-sm   whitespace-nowrap'>
                                                                 {food.quantity}
@@ -185,12 +186,12 @@ const MyOrders = () => {
                             </div>
                     }
                 </div>
-                <div className='col-span-5 border-2 h-fit'>
+                <div className='col-span-5  h-fit mx-auto w-10/12 '>
 
 
-                    <table className="table">
+                    <table className="table border">
                         <thead>
-                            <tr>
+                            <tr className='border-b  border-gray-500'>
                                 <th>Name</th>
                                 <th>Amount</th>
                             </tr>
@@ -198,19 +199,16 @@ const MyOrders = () => {
                         <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>{432 || 897}$</td>
+                                <td>{total_amount}$</td>
                             </tr>
-                            <tr>
+                            <tr className='border-b  border-gray-500'>
                                 <td>Delivery Charge</td>
-                                <td>30</td>
+                                <td>40 &</td>
                             </tr>
-                            <tr>
-                                <td>Discount</td>
-                                <td>{0} </td>
-                            </tr>
+                           
                             <tr>
                                 <td>Total</td>
-                                <td> asd$</td>
+                                <td> {total_amount + 40}$</td>
                             </tr>
                         </tbody>
                     </table>
