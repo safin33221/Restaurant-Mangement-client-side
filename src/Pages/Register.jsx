@@ -74,7 +74,7 @@ const Register = () => {
 
             })
             .catch(error => {
-
+                setLoading(false)
                 if (error.code === "auth/email-already-in-use") {
                     return toast.error('Already have an account on this email !', {
                         position: "top-right",

@@ -52,7 +52,7 @@ const MyOrders = () => {
     console.log(total_amount);
     if (loading) return <Loading />
     return (
-        <div className='min-h-screen pt-10 bg-gray-100'>
+        <div className='min-h-screen pt-10 '>
             <Helmet><title>Master Chef || My Orders</title></Helmet>
 
             <div className='grid grid-cols-12 gap-5 '>

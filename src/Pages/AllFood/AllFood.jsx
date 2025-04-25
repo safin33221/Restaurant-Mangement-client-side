@@ -43,7 +43,7 @@ const AllFood = () => {
                     </div>  
                     <div onClick={() => setSort(sort === 'ascending' ? 'descending' : 'ascending')}
                         className="flex w-fit    " >
-                        <button className="btn bg-gray-300">
+                        <button className="btn  ">
                             {
                                 sort === 'ascending' ? (<>
                                     <LuChartNoAxesColumnIncreasing className='text-xl font-bold' />
