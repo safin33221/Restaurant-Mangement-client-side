@@ -24,17 +24,17 @@ import { Helmet } from "react-helmet-async";
 
 
 const photos = [
-    { src: item1,  width: 500, height: 400, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
-    { src: item2,  width: 500, height: 400, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
-    { src: item3,  width: 500, height: 400, title: "Exotic Cuisine", description: "Fresh herbs and bold spices for a culinary masterpiece." },
-    { src: item4,  width: 500, height: 400, title: "Healthy Salad", description: "Crisp greens with a light vinaigrette." },
-    { src: item5,  width: 500, height: 400, title: "Dessert Bliss", description: "Rich chocolate and whipped cream." },
-    { src: item6,  width: 500, height: 400, title: "Tropical Delight", description: "Fresh fruits and tropical flavors." },
-    { src: item7,  width: 500, height: 400, title: "Seafood Special", description: "Grilled prawns with a lemon butter sauce." },
-    { src: item8,  width: 500, height: 400, title: "Comfort Food", description: "Warm and hearty dishes for cold days." },
-    { src: item9,  width: 500, height: 400, title: "Gourmet Platter", description: "Artisanal cheeses and fresh produce." },
-    { src: item10, width: 500, height: 400, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
-    { src: item11, width: 500, height: 400, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
+    { src: item1,  width: 200, height: 240, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
+    { src: item2,  width: 200, height: 240, title: "Delicious Food", description: "Juicy grilled skewers with fresh tomato and dipping sauce." },
+    { src: item3,  width: 200, height: 240, title: "Exotic Cuisine", description: "Fresh herbs and bold spices for a culinary masterpiece." },
+    { src: item4,  width: 200, height: 240, title: "Healthy Salad", description: "Crisp greens with a light vinaigrette." },
+    { src: item5,  width: 200, height: 240, title: "Dessert Bliss", description: "Rich chocolate and whipped cream." },
+    { src: item6,  width: 200, height: 240, title: "Tropical Delight", description: "Fresh fruits and tropical flavors." },
+    { src: item7,  width: 200, height: 240, title: "Seafood Special", description: "Grilled prawns with a lemon butter sauce." },
+    { src: item8,  width: 200, height: 240, title: "Comfort Food", description: "Warm and hearty dishes for cold days." },
+    { src: item9,  width: 200, height: 240, title: "Gourmet Platter", description: "Artisanal cheeses and fresh produce." },
+    { src: item10, width: 200, height: 240, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
+    { src: item11, width: 200, height: 240, title: "Classic Burger", description: "Juicy patty with fresh toppings." },
 ];
 const Gallery = () => {
     const [index, setIndex] = useState(false);

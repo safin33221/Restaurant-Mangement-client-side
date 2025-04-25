@@ -163,10 +163,10 @@ const AddFood = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn    px-10  font-bold  text-xl"
+                    className="btn    px-10  font-bold  text-xl w-full "
                 >
                     {
-                        loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Add"
+                        loading ? <ImSpinner9 className='animate-spin mx-auto' /> : "Add Food "
                     }
                 </button>
             </form>
