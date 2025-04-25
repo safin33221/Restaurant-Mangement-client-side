@@ -110,19 +110,14 @@ const MyOrders = () => {
                                                         >
                                                             Buying Date
                                                         </th>
-                                                        <th
-                                                            scope='col'
-                                                            className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right '
-                                                        >
-                                                            Food Woner
-                                                        </th>
+                                                       
 
                                                         <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right '>
                                                             Delete
                                                         </th>
                                                     </tr>
                                                 </thead>
-                                                <tbody className=' divide-y divide-gray-200 '>
+                                                <tbody className=' divide-y divide-gray-200  '>
 
                                                     {
                                                         myFoods.map(food => <tr key={food._id} >
@@ -149,9 +144,7 @@ const MyOrders = () => {
                                                                     </p>
                                                                 </div>
                                                             </td>
-                                                            <td className='px-4 py-4 text-sm   whitespace-nowrap'>
-                                                                {food.foodWoner?.email}
-                                                            </td>
+                                                           
                                                             <td className='px-4 py-4 text-sm whitespace-nowrap'>
                                                                 <div className='flex items-center gap-x-6'>
                                                                     <button onClick={() => handleDelete(food._id)}
@@ -186,7 +179,7 @@ const MyOrders = () => {
                             </div>
                     }
                 </div>
-                <div className=' col-span-12 md:col-span-5  h-fit mx-auto w-10/12 '>
+                <div className=' col-span-12 md:col-span-5  h-fit mx-auto w-10/12  rounded-xl'>
 
 
                     <table className="table border">
