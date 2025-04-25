@@ -4,13 +4,13 @@ import FoodCard from '../../Components/FoodCard';
 import { authContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import Loading from '../../Components/Loading';
-
+import { LuChartNoAxesColumnDecreasing, LuChartNoAxesColumnIncreasing } from "react-icons/lu";
 const AllFood = () => {
 
     const { darktheme } = useContext(authContext)
     const [foods, setFoods] = useState([])
     const [search, setSearch] = useState('')
-    const [sort, setSort] = useState('')
+    const [sort, setSort] = useState('ascending')
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -34,19 +34,32 @@ const AllFood = () => {
             </div>
 
             {/* food Card section */}
-            <div>
-                <h1 className='text-center font-bold text-3xl   w-fit mx-auto'>Our Food items_</h1>
-                <div className="join flex flex-col-reverse gap-4 md:flex-row items-center justify-center mt-5 px-5 mx-auto">
-                    <div className='flex'>
-                        <input onChange={(e) => setSearch(e.target.value)} className={`input input-sm input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
-                        <button className="btn btn-sm  rounded-r-full">Search</button>
-                    </div>
-                    <div className="felx mx-2" >
-                        <select onChange={(e) => setSort(e.target.value)} className="border mr-5 select-sm rounded-xl  " name="" id="">
+            <div className=''>
+
+                <div className="join   gap-4 md:flex-row items-center justify-center  w-full mt-5  mx-auto px-16 md:px-20">
+                    <div className='flex w-full'>
+                        <input onChange={(e) => setSearch(e.target.value)} className={`input w-full input-bordered  focus:outline-none flex items-center join-item gap-2 ${darktheme && "bg-gray-700"}`} placeholder="Search Here" />
+                        <button className="btn  rounded-r-full">Search</button>
+                    </div>  
+                    <div onClick={() => setSort(sort === 'ascending' ? 'descending' : 'ascending')}
+                        className="flex mx-2" >
+                        <button className="btn bg-gray-300">
+                            {
+                                sort === 'ascending' ? (<>
+                                    <LuChartNoAxesColumnIncreasing className='text-xl font-bold' />
+                                    Low To High
+                                </>) : (<>
+                                    <LuChartNoAxesColumnDecreasing className='text-xl font-bold'   />
+                                    High to Low
+                                </>
+                                )
+                            }
+                        </button>
+                        {/* <select onChange={(e) => setSort(e.target.value)} className="border mr-5 select-xl  rounded-full   " name="" id="">
 
                             <option value="ascending">Low to High </option>
                             <option value="dscending">High to Low </option>
-                        </select>
+                        </select> */}
 
                     </div>
                 </div>
@@ -56,7 +69,7 @@ const AllFood = () => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
